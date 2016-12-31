@@ -1,0 +1,71 @@
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	margin:0 auto;
+	width:1366px;
+	background:url(../images/register.jpg);
+	font-size:12px;
+}
+#header{
+	width:380px;
+	height:290px;
+	margin:226px 300px 0px 510px;
+	padding-top:10px;
+}
+.STYLE1 {
+	font-size: 16px;
+	color:#FF0;
+}
+form
+{
+	margin:15px auto;
+	height:300px;
+	width: 380px;
+}
+.line
+{
+	height: 25px;
+	width: 380px;
+	margin:5px 0 0 20px;
+}
+label
+{
+	height:16px;
+	width:90px;
+	float:left;
+	text-align:right;
+	padding:10px;
+	
+}
+.input{
+	height: 10px;
+	width: 150px;
+	margin-left:10px;
+	float:left;
+	padding:10px;
+	border-radius:5px;
+	background:#027fa3;
+	border:#FFFFFF 1px solid;
+}
+.btn {
+	font-size: 16px;
+	background-color:#ece9d8;
+	height: 30px;
+	width: 50px;
+	float:left;
+	margin-left:90px;
+	margin-top:10px;
+	border-radius:8px;
+	box-shadow:3px 3px rgba(0,0,0,0.3);
+}
+.STYLE3 {font-size: 16px}
+.err{
+	color: red;
+}
+.rig{
+	color: green;
+}
+

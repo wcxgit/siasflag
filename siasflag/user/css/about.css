@@ -1,0 +1,287 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  margin:0 auto;
+  background: #FFFFFF url(../images/bg.png) no-repeat;
+  font-size:12px;
+  color:#616161;
+  background—size:100%;
+}
+ul{
+  list-style-type:none;
+}
+a{
+  text-decoration:none;
+  color:#FFFFFF;
+}
+a:hover{
+  text-decoration:underline;
+}
+#header{
+  width:1366px;
+  height:89px; 
+  margin:0 auto;
+}
+h1{ 
+  width:197px; 
+  height:75px; 
+  float:left; 
+  margin-top:5px;
+  margin-left:180px;
+}
+#header ul{
+  width:180px; 
+  height:22px; 
+  list-style-type:none; 
+  float:right;
+  margin:10px 30px 0px 0px;
+}
+#header ul li{  
+  line-height:22px; 
+  display:inline-block; 
+  text-align:center;
+}
+#header ul li.aa{
+  margin-left:25px;
+}
+#header ul li a{ 
+  color:#000000; 
+  text-decoration:none; 
+  font-size:14px;
+}
+#header ul li a:hover{ 
+  color:#000000; 
+  text-decoration:underline; 
+  font-weight:bold;
+}
+#nav{
+  width:980px;
+  height:43px;
+  margin:-1px auto;
+}
+#nav ul li{
+  width:140px;
+  height:43px;
+  background:url(../images/nav.png);
+  line-height:28px;
+  float:left;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+}
+#nav ul li a{
+  color:#FFFFFF;
+  display:block;
+}
+#nav ul li a:hover{
+  color:#000000;
+  text-decoration:none;
+  width:116px;
+  height:21px;
+  background:url(../images/nav_bg.png);
+  margin-top:3px;
+  margin-left:11px;
+  line-height:21px;
+}
+#con{
+  width:980px;
+  height:760px;
+  margin:0px auto;
+  overflow:hidden;
+  border:#CCCCCC 2px solid;
+  background:rgba(255,255,255,0.9);
+}
+.left{
+  width:606px;
+  height:760px;
+  float:left;
+}
+.left p{
+  width:590px;
+  color:#000000;
+  font-size:14px;
+  margin:20px 10px 0 10px;
+  line-height:24px;
+}
+.left img{
+  width:340px;
+  height:200px;
+  margin:0 10px 10px 0;
+  float:left;
+}
+.xq{
+  width:600px;
+  height:290px;
+  margin:5px auto;
+  border-top:#999 1px dashed;
+  padding-top:10px;
+  border-right:#999 1px dashed;
+}
+.xq h3{
+  width:155px;
+  height:38px;
+  float:left;
+  line-height:33px;
+  text-align:center;
+  color:#FFFFFF;
+  background:url(../images/jiantou1.png);
+  font-size:18px;
+  margin-left:-5px;
+}
+.xq p{
+  width:586px;
+  margin:5px 10px 0 10px;
+  color:#000000;
+  font-size:14px;
+  line-height:24px;
+  float:left;
+}
+.xq a{
+  color:#c53410;
+}
+#ts{
+  width:600px;
+  height:180px;
+  border-right:#999 1px dashed;
+}
+#ts p.a{
+  width:250px;
+  height:40px;
+  float:left;
+  background:url(../images/duihui.jpg) top no-repeat;
+  margin-left:50px;
+  text-align:center;
+  padding-top:140px;
+  margin-top:0px;
+}
+#ts p.b{
+  width:250px;
+  height:40px;
+  float:left;
+  background:url(../images/bizhang.jpg) top no-repeat;
+  text-align:center;
+  padding-top:140px;
+  margin-top:0px;
+}
+.centre{
+  width:4px;
+  height:760px;
+  float:left;
+}
+.right{
+  width:370px;
+  height:760px;
+  float:left;
+}
+.top{
+  width:370px;
+  height:320px;
+}
+.top h3{
+  width:155px;
+  height:38px;
+  float:left;
+  line-height:33px;
+  text-align:center;
+  color:#FFFFFF;
+  background:url(../images/jiantou1.png);
+  font-size:18px;
+  margin:10px 0 10px -5px;
+}
+#slider {
+	width:360px;
+	height:240px;
+	margin:0 auto;
+}
+.pagination li {
+	background-color: #ddd;
+}
+
+.pagination li.active {
+	background-color:#c70b31;
+}
+.responsive {
+	width: 100%;
+	height: auto;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.bottom{
+  width:370px;
+  height:370px;
+  background:url(../images/about_.bottom.png) top no-repeat;
+}
+.bottom h3{
+  width:370px;
+  height:38px;
+  line-height:22px;
+  text-align:center;
+  color:#FFFFFF;
+  font-size:18px;
+}
+.bottom span{
+  width:370px;
+  margin:5px 10px 0 0px;
+  color:#000;
+  font-size:14px;
+  line-height:24px;
+  float:left;
+}
+.bottom p{
+  line-height:20px;
+  width:370px;
+  height:40px;
+  font-weight:bold;
+  font-size:14px;
+  margin:8px auto;
+}
+#footer{
+  height:118px;
+  width:1366px;
+  border-top:#c53410 4px solid;
+  background:#000000;
+  font-size:12px;
+}
+#footer p{
+  line-height:20px;
+  float:left;
+  margin:15px 0px 0px 185px;
+  color:#FFFFFF;
+}
+#footer h3 a{
+  float:right;
+  margin-top:65px;
+  color:#fff;
+  font-size:20px; 
+  margin-right:120px;
+}
+#footer h3 a:hover{
+  text-decoration:underline;
+}
+.link{
+  width:978px;
+  height:30px;
+  margin:65px auto;
+  text-align:center;
+  line-height:30px;
+  color:#666666;
+  border-top:#666 1px dashed;
+}
+
+
+
+
+
+
+
+
+
+
+
+

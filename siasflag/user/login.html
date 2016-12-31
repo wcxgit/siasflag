@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			function submit(){
+				$.ajax({
+					type:"POST",
+					url:"php/login.php",
+					async:true,
+					data:{
+						"username":$('input[name=username]').val(),
+						"pwd":$('input[type=password]').val(),
+						"flag":$('input[type=radio]:checked').val()
+					},
+					success:function(data){
+						if(data == "用户登录"){
+							window.location.href="index.php";
+						}else if(data == "管理员登录" || data == "超级管理员"){
+							window.location.href="../management/html/index.php";
+						}else{
+							$('#err').html(data);
+						}
+					},
+					error:function(jqXHR){
+						alert(jqXHR.status);
+					}
+				});
+			}
+			function reset(){
+				$('input[type=text]').val("");
+				$('input[type=password]').val("");
+			}
+			function hide(){
+				$('#err').html("");
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="header">
+			<div class="line">
+				<label class="STYLE3">用户名</label>
+				<input type="text" name="username" class="input"  onfocus="hide()"/>
+				<span id="err_username"></span></div>
+			<br />
+			<div class="line">
+				<label class="STYLE3">密码  </label>
+				<input type="password" name="pwd" class="input" onfocus="hide()"/>
+				<span id="err_pwd"></span>
+			</div>
+			<br />
+			<input type="radio" name="login" value="0" id="user" checked style="margin-left: 115px;"/>用户登录
+			<input type="radio" name="login" value="1" id="manager" style="margin-left:24px;"/>管理员登录
+			<span id="err" style="color: red;margin-left: 130px;">
+			</span>
+			<div class="line">
+				<input type="reset" name="reset" value="重置" class="btn" onclick="reset()"/>
+				<input type="submit" name="Submit"value="提交" class="btn" onclick="submit()" />
+			</div>
+		</div>
+	</body>
+</html>

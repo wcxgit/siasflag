@@ -1,0 +1,40 @@
+/* CSS Document */
+
+body {
+	background:#f7fbfd;
+	width:100%;
+	margin:auto;
+	padding:0px;
+}
+#header{
+   width:100%;
+   height:62px;
+   background:url(../img/nav04.gif) repeat-x;
+}
+td.av a{
+     font-size:12px;
+	 color:#0099FF;
+	 text-decoration:none;
+	 font-weight:bold;}
+td.av a:hover{
+     text-decoration:underline;
+	 color:#FF00FF;}
+
+#connent{
+   width:70%;
+   height:110px;
+   margin:60px auto;
+   border:#000 1px dashed;
+   font-size:17px;
+}
+#connent p{
+   line-height:24px;
+   font-weight:bold;
+   text-align:center;
+}
+#connent span{
+   float:right;
+   margin-right:215px;
+   font-weight:bold;
+   margin-top:-15px;
+}

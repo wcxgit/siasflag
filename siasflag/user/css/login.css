@@ -1,0 +1,65 @@
+/* CSS Document */
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  margin:0 auto;
+  width:1366px;
+  background:url(../images/login.jpg);
+  font-size:12px;
+}
+#header{
+  width:320px;
+  height:185px;
+  margin:280px 0px 0px 520px;
+  padding-top:15px;
+}
+STYLE1 {
+	font-size: 16px;
+	color:#FF0;
+}
+form
+{
+	margin:15px auto;
+	height:320px;
+	width: 300px;
+}
+.line
+{
+	height: 25px;
+	width: 320px;
+	margin:5px 0 0 5px;
+}
+label
+{
+	height:16px;
+	width:90px;
+	float:left;
+	text-align:right;
+	padding:10px;
+	
+}
+.input{
+	height: 10px;
+	width: 150px;
+	float:left;
+	padding:10px;
+	border-radius:5px;
+	background:#01b496;
+	border:#FFFFFF 1px solid;
+	}
+.btn {
+	font-size: 16px;
+	background-color:#ece9d8;
+	height: 30px;
+	width: 50px;
+	float:left;
+	margin-left:80px;
+	margin-top:20px;
+	border-radius:8px;
+	box-shadow:3px 3px rgba(0,0,0,0.3);
+}
+.STYLE3 {font-size: 16px}
+
+
