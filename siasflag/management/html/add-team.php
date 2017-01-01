@@ -75,10 +75,10 @@
 							<td width="16%" class="aa"></td>
 						</tr>
 						<tr>
-							<td width="19%" align="right">上传照片: <input type="file" name="img" class="input" multiple="multiple" /></td><span id="msg"></span>
+							<td width="19%" align="right">上传照片: <input type="file" name="img[]" class="input" multiple="multiple" /></td><span id="msg"></span>
 						</tr>
 						<tr width="19%" align="right">
-						<td>注意：单个文件要小于2M</td></tr>
+						<td>注意：单个文件要小于2M,最大上传数量为20</td></tr>
 						<tr>
 							<td colspan="2" align="right" height="100px">
 								<input type="submit"  value="添加" class="button" onclick="submit();" />

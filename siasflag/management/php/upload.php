@@ -68,7 +68,7 @@
 			if(!move_uploaded_file($fileInfo['tmp_name'],$destination)){
 				echo $fileInfo['name'].'文件移动失败';
 			}
-			echo $fileInfo['name'].'上传成功';
+			echo $fileInfo['name'].'上传成功<br/>';
 			/*$res['dest']=$destination;*/
 			return;
 			}else{
