@@ -1,10 +1,32 @@
 <!--在队人员列表-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php session_start();?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>人员列表</title>
     <link href="../css/team-list.css" rel="stylesheet" type="text/css" />
+    <script src="../../user/js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			var rank = $('#third').html();
+		$.ajax({
+			type: "post",
+			url: "../php/teamList.php",
+			async: true,
+			data: {
+				'rank': rank
+			},
+			success: function(data) {
+				$('#item').html(data);
+			},
+			error: function(jqXHR) {
+				alert(jqXHR.status);
+			}
+		});
+		})
+		
+	</script>
 </head>
 
 <body>
@@ -18,10 +40,14 @@
                             <table align="right" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td rowspan="2" width="25%"><img src="../img/ico02.gif" width="35" height="35" /></td>
-                                    <td class="left1">您好，<span>小明</span></td>
+                                    <?php
+											if ($_SESSION["Passed"]) {
+												echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
+											}
+											?>
                                 </tr>
                                 <tr>
-                                    <td width="55%" height="22" class="left2"><a href="enter.html">[退出]</a></td>
+                                    <td width="55%" height="22" class="left2"><a href="../php/loginout.php">[退出]</a></td>
                                 </tr>
                             </table>
                         </td>
@@ -31,11 +57,23 @@
         </tr>
     </table>
 </div></br>
-              <ul> 
-				 <li><a href="team-list.html">2014级</a></li>
-                 <li class="bg"><a href="team-list（2015）.html">2015级</a></li>
-                 <li><a href="team-list（2016）.html">2016级</a></li>
-			  </ul>
+              <ul>
+			<li class="bg">
+				<a href="first.php">
+					<span id="first"><?php echo date("Y")-3;?></span>级
+				</a>
+			</li>
+			<li>
+				<a href="second.php">
+					<span id="second"> <?php echo date("Y")-2; ?> </span>级
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span id="third"><?php echo date("Y")-1;?></span>级
+				</a>
+			</li>
+		</ul>
 <form>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
        <tr>
@@ -46,43 +84,8 @@
               <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
                <tr>
                  <td height="40"><br>
-                 <table  width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#66CC99" align="center">
-               <tr>
-				             <td height="22" colspan="4" align="center" class="ac">2015级列表</td>
-				           </tr>
-				           <tr align="center" bgcolor="#EEEEEE">
-				             <td width="4%" height="30">选择</td>
-				             <td width="10%">用户名</td>
-				             <td width="10%">创建时间</td>
-				             <td width="12%">操作</td>
-				           </tr>
-				           <tr bgcolor="#FFFFFF" align="center" class="az">
-				             <td height="20"><input type="checkbox" name="delid"/></td>
-				             <td><a href="#" onclick=""></a>小明</td>
-				             <td>2016-12-01</td>
-				             <td class="ad"><a href="#">修改</a>｜<a href="#">删除</a></td>
-				           </tr>
-				           <tr bgcolor="#FFFFFF" align="center" class="az">
-				             <td height="20"><input type="checkbox" name="delid"/></td>
-				             <td><a href="#" onclick=""></a>小明</td>
-				             <td>2016-12-01</td>
-				             <td class="ad"><a href="#">修改</a>｜<a href="#">删除</a></td>
-				           </tr>
-				           <tr bgcolor="#FFFFFF" align="center" class="az">
-				             <td height="20"><input type="checkbox" name="delid"/></td>
-				             <td><a href="#" onclick=""></a>小明</td>
-				             <td>2016-12-01</td>
-				             <td class="ad"><a href="#">修改</a>｜<a href="#">删除</a></td>
-				           </tr>
-				           <tr bgcolor="#FFFFFF" align="center" class="az">
-				             <td height="20"><input type="checkbox" name="delid"/></td>
-				             <td><a href="#" onclick=""></a>小明</td>
-				             <td>2016-12-01</td>
-				             <td class="ad"><a href="#">修改</a>｜<a href="#">删除</a></td>
-				           </tr>
-						   </table>
-						 </td>
-					  </tr>
+                 <table id="item" width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#66CC99" align="center">
+               
 				   </table>
 				   <table  width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 				      <tr>

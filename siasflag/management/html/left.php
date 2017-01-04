@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -171,7 +172,7 @@ function list(idstr){
 
 				  <td width="9%" height="20"><img id="xiaotu21" src="../img/ico06.gif" width="8" height="12" /></td>
 
-				  <td width="91%"><a href="team-list.php" target="mainFrame"  onClick="tupian('21');">在队人员列表</a></td>
+				  <td width="91%"><a href="first.php" target="mainFrame"  onClick="tupian('21');">在队人员列表</a></td>
 
 			  <tr>
 			<tr>
@@ -448,7 +449,7 @@ function list(idstr){
 
 				  <td width="9%" height="20"><img id="xiaotu21" src="../img/ico06.gif" width="8" height="12" /></td>
 
-				  <td width="91%"><a href="team-list.html" target="mainFrame"  onClick="tupian('21');">在队人员列表</a></td>
+				  <td width="91%"><a href="first.php" target="mainFrame"  onClick="tupian('21');">在队人员列表</a></td>
 
 			  <tr>
 			<tr>

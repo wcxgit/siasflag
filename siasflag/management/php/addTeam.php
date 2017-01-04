@@ -5,6 +5,7 @@
 
 	mysql_query('set names utf8');
 	$rank = $_POST['rank'];//级别
+	$time = date('Y-m-d');
 	//上传照片
 	$path = '../../imgs/'.$rank;
 	$flag = true;//是否检查文件类型
@@ -20,7 +21,7 @@
 		/*$fileInfo_name = iconv('gb2312', 'utf-8', $fileInfo['name']);*/
 		$photo_path = $path.'/'.$fileInfo_name;
 		$name = strtolower(reset(explode('.', $fileInfo_name)));
-		$sql = "insert into team (name,rank,photo) values ('$name','$rank','$photo_path')";
+		$sql = "insert into team (name,rank,photo,create_time) values ('$name','$rank','$photo_path','$time')";
 		$result = mysql_query($sql,$con);
 		if(!$result){
 			echo '发生错误：'.mysql_error();
