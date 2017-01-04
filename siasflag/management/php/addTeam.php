@@ -18,7 +18,6 @@
 				<table width='95%' border='0' cellpadding='2' cellspacing='0' align='center'>";
 	foreach ($files as $fileInfo) {
 		$fileInfo_name =  $fileInfo['name'];
-		/*$fileInfo_name = iconv('gb2312', 'utf-8', $fileInfo['name']);*/
 		$photo_path = $path.'/'.$fileInfo_name;
 		$name = strtolower(reset(explode('.', $fileInfo_name)));
 		$sql = "insert into team (name,rank,photo,create_time) values ('$name','$rank','$photo_path','$time')";

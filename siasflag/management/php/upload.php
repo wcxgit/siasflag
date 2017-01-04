@@ -48,6 +48,8 @@ function uploadFile($fileInfo, $path = './uploads', $flag = true, $maxSize = 104
 		//检测上传文件的文件类型
 		if (!in_array($ext, $allowExt)) {
 			echo $fileInfo['name'] . '非法文件类型';
+			echo "<a href='javascript:;' onclick='javascript:history.go(-1);'>点此返回上页！</href>";
+			exit;
 		}
 		//检测是否是真实的图片类型
 		if ($flag) {
