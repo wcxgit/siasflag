@@ -54,7 +54,17 @@
            <li><a href="depShow.php">荣誉展示</a></li>
            <li><a href="file.php">文件列表</a></li>
 		   <li><a href="picture.php">照片墙</a></li>
-           <li><a href="come.php">加入我们</a></li>
+          <?php
+				if ($_SESSION['on-off']) {
+					echo '<li>
+<a href="come.php">加入我们</a>
+</li>';
+				}else{
+					echo '<li>
+<a href="javascript:;" onclick="msg();">加入我们</a>
+</li>';
+				}
+				?>
 		   <li><a href="message.php">留言板</a></li>
 	   </ul>
 </div>

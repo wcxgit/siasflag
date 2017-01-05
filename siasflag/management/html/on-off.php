@@ -1,108 +1,129 @@
 <!--加入我们开关-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php session_start(); ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
+	<head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>开关设置</title>
+		<title>开关设置</title>
 
-    <link href="../css/add video.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/add video.css" rel="stylesheet" type="text/css"/>
+		<script src="../../user/js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">function submit() {
+	var off = $('input[type=radio]:checked').val();
+	$.ajax({
+		type: "post",
+		url: "../php/switch.php",
+		async: true,
+		data: {
+			'of': off
+		},
+		success: function(data) {
+			console.log(data);
+		},
+		error: function(jqXHR) {
+			console.log(jqXHR.status);
+		}
+	});
 
-</head>
+}</script>
+	</head>
 
+	<body>
 
-<body>
+		<div id="header">
 
-<div id="header">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
 
-        <tr>
+					<td height="30">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 
-            <td height="30">
+							<tr>
 
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<td height="62">
+									<table align="right" border="0" cellspacing="0" cellpadding="0">
 
-                    <tr>
+										<tr>
 
-                        <td height="62">
+											<td rowspan="2" width="25%">
+												<img src="../img/ico02.gif" width="35" height="35"/>
+											</td>
 
-                            <table align="right" border="0" cellspacing="0" cellpadding="0">
+											<?php
+											if ($_SESSION["Passed"]) {
+												echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
+											}
+											?>
+										</tr>
 
-                                <tr>
+										<tr>
 
-                                    <td rowspan="2" width="25%"><img src="../img/ico02.gif" width="35" height="35"/>
-                                    </td>
+											<td width="55%" height="22" class="left2">
+												<a href="../php/loginout.php">
+													[退出]
+												</a></td>
 
-                                    <td class="left1">您好，<span>小明</span></td>
+										</tr>
 
-                                </tr>
+									</table></td>
 
-                                <tr>
+							</tr>
 
-                                    <td width="55%" height="22" class="left2"><a href="enter.html">[退出]</a></td>
+						</table></td>
 
-                                </tr>
+				</tr>
 
-                            </table>
+			</table>
 
-                        </td>
+		</div>
+		</br>
 
-                    </tr>
+		<fieldset>
 
-                </table>
+			<legend>
+				开关设置
+			</legend>
 
-            </td>
+			<table width="90%" border="0" cellpadding="2" cellspacing="0" align="center">
 
-        </tr>
+				<tr>
+					<td height="20"></td>
+				</tr>
 
-    </table>
+				<tr height="40">
+					<!--<td width="16%" class="aa">视频名称：<input type="text" name="vedioNmae" /><span class="red"> *</span></td>
 
-</div>
-</br>
+					<td width="16%" class="aa">视频链接：<input type="text" name="vedioUrl"><span class="red"> *</span></td>-->
+					<td width="16%" class="aa">是否开启加入我们功能？ <?php
+					if ($_SESSION['on-off']) {
+						echo '<input type="radio" name="of" value="off" >关闭
+<input type="radio" name="of" value="on" checked>开启';
+					} else {
+						echo '<input type="radio" name="of" value="off" checked>关闭
+<input type="radio" name="of" value="on">开启';
+					}
+						?></td>
+				</tr>
 
-<form>
+				<tr>
 
-    <fieldset>
+					<td colspan="2" height="40px">
+						<input class="bc" type="button" name="Submit" value="保存" class="button" onclick="submit();" />
+					</td>
 
-        <legend>开关设置</legend>
+				</tr>
 
-        <table width="90%" border="0" cellpadding="2" cellspacing="0" align="center">
+			</table>
 
-            <tr>
-                <td height="20"></td>
-            </tr>
+		</fieldset>
 
-            <tr height="40">
-                <!--<td width="16%" class="aa">视频名称：<input type="text" name="vedioNmae" /><span class="red"> *</span></td>
-
-                <td width="16%" class="aa">视频链接：<input type="text" name="vedioUrl"><span class="red"> *</span></td>-->
-                <td width="16%" class="aa">是否开启加入我们功能？<input type="radio" name="of" value="on">开启
-                    <input type="radio" name="of" value="off">关闭
-                </td>
-            </tr>
-
-            <tr>
-
-                <td colspan="2" height="40px">
-
-                    <input class="bc" type="button" name="Submit" value="保存" class="button" onclick="link();"/>
-                </td>
-
-            </tr>
-
-        </table>
-
-    </fieldset>
-
-</form>
-
-
-</body>
+	</body>
 
 </html>
 

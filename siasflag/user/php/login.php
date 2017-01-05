@@ -9,6 +9,9 @@
 	if(!isset($_SESSION["super"])){
 		$_SESSION["super"] = false;
 	}
+	/*if(!isset($_SESSION['admin'])){
+		$_SESSION['admin']=false;
+	}*/
 	if($_SESSION["Passed"]== false){
 		$name = $_POST["username"];
 		$pwd = $_POST["pwd"];
@@ -25,14 +28,17 @@
 			echo "用户登录";
 		}else{
 			if($name == "super" && $pwd == "super"){
+				/*$_SESSION['admin'] = false;*/
 				$_SESSION["super"] = true;
 				echo "超级管理员";
 			}else{
 				$_SESSION["super"] = false;
+				/*$_SESSION['admin'] = true;*/
 				echo "管理员登录";
 			}
 		}
 		$_SESSION["Passed"] = true;
 		$_SESSION['user'] = $name;
+		/*$_SESSION['admin'] = $name;*/
 	}
 ?>
