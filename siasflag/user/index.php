@@ -24,9 +24,19 @@ function msg(){
 //填充校园活动
 $.ajax({
 	method:'get',
-	url:'php/getFiles.php',
+	url:'php/getFiles.php?id=1&r='+Math.random(),
 	success:function(data){
 		$('#xiaoyuan').html(data);
+	},
+	error:function(data){
+		alert (data.status);
+	}
+});
+$.ajax({
+	method:'get',
+	url:'php/getFiles.php?id=2&r='+Math.random(),
+	success:function(data){
+		$('#duinei').html(data);
 	},
 	error:function(data){
 		alert (data.status);
@@ -201,8 +211,8 @@ $.ajax({
 				<img src="images/index/right_pc.jpg">
 				<div class="sj">
 					<h3>队 内 纪 事</h3>
-					<ul>
-						<li>
+					<ul id="duinei">
+						<!-- <li>
 							<a href="#">
 								郑州大学西亚斯国际学院十五周年校庆国旗护卫队会展
 							</a>
@@ -236,7 +246,7 @@ $.ajax({
 							<a href="#">
 								郑州大学西亚斯国际学院十五周年校庆国旗护卫队会展
 							</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
