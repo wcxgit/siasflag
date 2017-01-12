@@ -48,6 +48,14 @@
 						<td height="20"></td>
 					</tr>
 					<tr height="40">
+						<td width="16%" class="aa">文件类型：
+							<select name="sel[]">
+								<option value="1">校内活动</option>
+								<option value="2">队内纪事</option>
+							</select>
+						</td>
+					</tr>
+					<tr height="40">
 						<td width="16%" class="aa">添加文件：
 							<input type="file" name="file[]" multiple="multiple">
 						</td>

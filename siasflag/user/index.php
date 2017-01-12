@@ -21,6 +21,18 @@ function msg(){
 	alert('暂未开放此功能！');
 }
 
+//填充校园活动
+$.ajax({
+	method:'get',
+	url:'php/getFiles.php',
+	success:function(data){
+		$('#xiaoyuan').html(data);
+	},
+	error:function(data){
+		alert (data.status);
+	}
+});
+
 </script>
 
 		<title>西亚斯国旗护卫队</title>
@@ -36,7 +48,7 @@ function msg(){
 				<img src="images/logo.png">
 			</a></h1>
 			<?php
-			if (!$_SESSION["Passed"]) {
+			if (!$_SESSION['user']) {
 				echo "<ul>
 <li>
 <a href='login.html'>登录</a>
@@ -47,9 +59,10 @@ function msg(){
 </li>
 </ul>";
 			} else {
+				$id = $_SESSION['sid'];
 				echo "<ul>
 <li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
-<li><a href='php/loginOut.php'>退出登录</li>
+<li><a href='php/loginOut.php?id=$id'>退出登录</li>
 </ul>";
 			}
 			?>
@@ -116,8 +129,8 @@ function msg(){
 		<div id="con">
 			<div class="left">
 				<h3>校 园 活 动</h3>
-				<ul>
-					<li>
+				<ul id="xiaoyuan">
+					<!-- <li>
 						<a href="#">
 							郑州大学西亚斯国际学院十五周年校庆国旗护卫队会展
 						</a><span>2017-3-09</span>
@@ -181,7 +194,7 @@ function msg(){
 						<a href="#">
 							郑州大学西亚斯国际学院十五周年校庆国旗护卫队会展
 						</a><span>2017-3-09</span>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<div class="right">
