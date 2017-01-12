@@ -97,7 +97,7 @@ function rebirth() {
 					<tr>
 						<td colspan="2" align="right" height="100px">
 							<input type="button" name="Submit" value="封存账号" class="button" onclick="kill();"/>
-							<input type="button" name="Submit2" value="解冻账号" class="button" onclick="rebirth();"/>
+							<input type="button" name="Submit2" value="解封账号" class="button" onclick="rebirth();"/>
 						</td>
 					</tr>
 				</table>

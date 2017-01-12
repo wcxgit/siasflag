@@ -1,10 +1,11 @@
+<!-- 留言信息回复 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>留言板</title>
-<link rel="stylesheet" type="text/css" href="css/message.css">
+<title>联系我们</title>
+<link rel="stylesheet" type="text/css" href="css/contact.css">
 </head>
 
 <body>
@@ -39,65 +40,25 @@
            <li><a href="depShow.php">荣誉展示</a></li>
            <li><a href="file.php">文件列表</a></li>
 		   <li><a href="picture.php">照片墙</a></li>
-         <?php
-				if ($_SESSION['on-off']) {
-					echo '<li>
-<a href="come.php">加入我们</a>
-</li>';
-				}else{
-					echo '<li>
-<a href="javascript:;" onclick="msg();">加入我们</a>
-</li>';
-				}
-				?>
+           <li><a href="come.php">加入我们</a></li>
 		   <li><a href="message.php">留言板</a></li>
 	   </ul>
 </div>
 <div id="con">
        <img src="images/message/message_1.png">
-	   <h3>郑州大学西亚斯国际学院国旗护卫队留言板</h3>
        <div class="left">
 	    <img src="images/message/message_3.png">
 	    <div class="line">
-		<p><a href="javascript:;">在线留言 >></a></p>
+		<p><a href="message.php">在线留言 >></a></p>
 		<p><a href="contact.php">联系我们 >></a></p>
-		<p><a href="reply.php">留言回复 >></a></p>
+		<p><a href="javascript:;">留言回复 >></a></p>
 		</div>
 	  </div>
+	  <div class="centre"></div>
 	   <div class="right">
-	       <pre>请留言：</pre>
-	        <form action="" method="post" name="message" onsubmit="return validatef1()">
-           <label>
-		      <p>
-                <span>姓名</span>
-                <input type="text" name="username" class="input" readonly="" /> 
-                </p><br />
-			  <p>
-                <span>电子邮箱</span>
-                <input type="text" name="email" class="input"/>
-	          </p><br />
-             <p>
-                <span>联系电话</span>
-                <input type="text" name="phone" class="input"/>
-	      </p>
-	      <br>
-	      <p>
-                <span>标题</span>
-                <input type="text" name="title" class="input"/> 
-                </p><br />
-			  <p><br />
-
-		        <span>留言</span>
-                <textarea name="txtSendContent" id="txtSendContent" cols="50" rows="5" style="margin-bottom:15px"></textarea>
-          </br>
-          <p>
-                <input type="reset" name="reset" value="重置" class="btn" />
-                <input type="submit" name="Submit" value="提交" class="btn" />
-          </p></label>
-          </form>
-
-
-       </div>
+	  <p>被回复的留言标题：</p><input type="text" name="title" value="被回复的留言标题">
+	   <p>回复的内容：</p><input type="text" name="content" value="回复的内容">
+	   </div>   
 </div>
 <div id="footer">
            <p>电话：010-12348888　传真：010-88666666　客服电话：400-0809-560<br />

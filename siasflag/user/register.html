@@ -8,8 +8,7 @@
 		<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			/*function ini() {
-																									f1.username.focus();
-																								}*/
+				*/
 			$('#user').focus();
 			//输入框获取焦点时，清空输入框后的内容
 			function hideUser() {
@@ -180,6 +179,7 @@
 					var mail = $('#mail').val();
 					var pwd = $('#pwd').val();
 					var repwd = $('#repwd').val();
+					var sex = $('input[type=radio]:checked').val();
 					$.ajax({
 						url: "php/register.php",
 						method: "POST",
@@ -188,7 +188,8 @@
 							"tel": tel,
 							"mail": mail,
 							"pwd": pwd,
-							"repwd": repwd
+							"repwd": repwd,
+							"sex":sex
 						},
 						success: function(data) {
 							if(data == "电话号码已被注册!") {
@@ -197,6 +198,8 @@
 								$('#err_username').html(data);
 							} else if(data == "邮箱已被注册!") {
 								$('#err_mail').html(data);
+							}else{
+								alert (data);
 							}
 						},
 						error: function(jqXHR) {
@@ -217,7 +220,13 @@
 				<span id="err_username" class="err"></span>
 				<spna class="rig" id="rig_username"></spna>
 			</div>
-
+			<br>
+			<div class="line">
+				<label class="STYLE3">性别</label>
+				<input type="radio" name="sex" value="1" style="margin-top: 15px;
+margin-left: 12px;" checked="">男
+				<input type="radio" name="sex" value="2" style="margin-left: 20px">女
+			</div>
 			<br />
 			<div class="line">
 				<label class="STYLE3">电话</label>

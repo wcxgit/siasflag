@@ -9,13 +9,14 @@
 	$pwd = $_POST["pwd"];
 	$repwd = $_POST["repwd"];
 	$time = date("Y-m-d h:i:s");
+	$sex = $_POST['sex'];
 		//插入数据 
-		$sql = "insert into user (tel,mail,username,password,flag,creat_time) values ('$tel','$mail','$name','$pwd','0','$time')";
+		$sql = "insert into user (tel,mail,username,password,flag,creat_time,sex) values ('$tel','$mail','$name','$pwd','0','$time','$sex')";
 		$result = mysql_query($sql);
 		if(!$result){
 			echo "注册失败：".mysql_error();
 		}else{
-		echo "注册成功";
+		echo "<a href='../login.html'>注册成功,点击返回登录</a>";
 	}
 	mysql_close($con);
 ?>

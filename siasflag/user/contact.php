@@ -49,7 +49,8 @@
 	    <img src="images/message/message_3.png">
 	    <div class="line">
 		<p><a href="message.php">在线留言 >></a></p>
-		<p><a href="contact.php">联系我们 >></a></p>
+		<p><a href="javascript:;">联系我们 >></a></p>
+		<p><a href="reply.php">留言回复 >></a></p>
 		</div>
 	  </div>
 	  <div class="centre"></div>
