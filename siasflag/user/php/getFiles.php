@@ -32,6 +32,16 @@ if($id == 2){
 						</li>';
 	}
 }
+if($id == 3){
+	$sql = "select * from file";
+	$files = mysql_query($sql);
+	if(!$files){
+		echo "查询出错：".mysql_error();
+	}
+	while($row = mysql_fetch_array($files)){
+		echo ' <li><a href="../sias'.$row['url'].'"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：'.$row['name'].'&nbsp;&nbsp;&nbsp;</p><span>日期：'.$row['time'].'</span></a></li>';
+	}
+}
 
 
 mysql_close($con);

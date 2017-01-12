@@ -5,6 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>文件列表</title>
 <link rel="stylesheet" type="text/css" href="css/file.css">
+<script src="js/jquery.1.7.2.min.js"></script>
+<script type="text/javascript">
+	$.ajax({
+		method:'get',
+		url:'php/getFiles.php?id=3&r='+Math.random(),
+		success:function(data){
+			$('#files').html(data);
+		},
+		error:function(data){
+			alert(data.status);
+		}
+	});
+</script>
 </head>
 
 <body>
@@ -55,7 +68,7 @@
 </div>
 <div id="con">
     <div class="file">
-	    <ul>
+	    <ul id="files">
 		   <li><a href="file detail.php"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：文件列表一&nbsp;&nbsp;&nbsp;发布者：王小明</p><span>日期：2016-12-30</span></a></li>
 		   <li><a href="file detail.html"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：文件列表一&nbsp;&nbsp;&nbsp;发布者：王小明</p><span>日期：2016-12-30</span></a></li>
 		   <li><a href="file detail.html"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：文件列表一&nbsp;&nbsp;&nbsp;发布者：王小明</p><span>日期：2016-12-30</span></a></li>
