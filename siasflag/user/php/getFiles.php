@@ -13,7 +13,7 @@ if($id==1){
 	while($row = mysql_fetch_array($xiaoyuan)){
 		echo '<li>
 		<a href="../sias'.$row['url'].'">'
-			.$row['name'].
+			.$row['title'].
 			'</a><span>'.$row['time'].'</span>
 		</li>';
 	}
@@ -27,7 +27,7 @@ if($id == 2){
 	while($row=mysql_fetch_array($duinei)){
 		echo '<li>
 							<a href="../sias'.$row['url'].'">
-								'.$row['name'].'
+								'.$row['title'].'
 							</a>
 						</li>';
 	}
@@ -39,7 +39,7 @@ if($id == 3){
 		echo "查询出错：".mysql_error();
 	}
 	while($row = mysql_fetch_array($files)){
-		echo ' <li><a href="../sias'.$row['url'].'"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：'.$row['name'].'&nbsp;&nbsp;&nbsp;</p><span>日期：'.$row['time'].'</span></a></li>';
+		echo ' <li><a href="../sias'.$row['url'].'"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：'.$row['title'].'&nbsp;&nbsp;&nbsp;</p><span>日期：'.$row['time'].'</span></a></li>';
 	}
 }
 

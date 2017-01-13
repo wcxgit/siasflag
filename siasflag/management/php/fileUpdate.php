@@ -29,7 +29,7 @@
 		/*$fileInfo_name = iconv('gb2312', 'utf-8', $fileInfo['name']);*/
 		$file_path = $path.'/'.$fileInfo_name;
 		$name = strtolower(reset(explode('.', $fileInfo_name)));
-		$sql = "insert into file (name,url,time,flag) values ('$name','$file_path','$time','$select')";
+		$sql = "insert into file (title,url,time,flag) values ('$name','$file_path','$time','$select')";
 		$result = mysql_query($sql,$con);
 		if(!$result){
 			echo '发生错误：'.mysql_error();
