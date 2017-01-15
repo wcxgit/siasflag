@@ -64,19 +64,23 @@ if(!$_SESSION[user]){
     <div class="show">
         <dl>
 	       <dt><img src="images/zhengshu.jpg"></dt>
-		   <dd><a href="file detail.php">标题:文件一</br>日期：2016-12-30</a></dd>
+		   <dd><a href="file detail.php">标题:文件一</br></a></dd>
 	    </dl>
 		<dl>
 	       <dt><img src="images/zhengshu.jpg"></dt>
-		   <dd><a href="file detail.php">标题:文件一</br>日期：2016-12-30</a></dd>
+		   <dd><a href="file detail.php">标题:文件一</br></a></dd>
 	    </dl>
 		 <dl>
 	       <dt><img src="images/zhengshu.jpg"></dt>
-		   <dd><a href="file detail.php">标题:文件一</br>日期：2016-12-30</a></dd>
+		   <dd><a href="file detail.php">标题:文件一</br></a></dd>
 	    </dl>
 		<dl>
 	       <dt><img src="images/zhengshu.jpg"></dt>
-		   <dd><a href="file detail.php">标题:文件一</br>日期：2016-12-30</a></dd>
+		   <dd><a href="file detail.php">标题:文件一</br></a></dd>
+	    </dl>
+	    <dl>
+	       <dt><img src="images/zhengshu.jpg"></dt>
+		   <dd><a href="file detail.php">标题:文件一</br></a></dd>
 	    </dl>
 
 	 </div>

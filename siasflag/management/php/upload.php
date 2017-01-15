@@ -75,8 +75,7 @@ function uploadFile($fileInfo, $path = './uploads', $flag = true, $maxSize = 104
 		$fileInfo_name = iconv('gb2312', 'utf-8', $fileInfo['name']);
 		echo "
 						<tr>
-							<td align='right' width='5%'>" . $fileInfo_name . "上传成功！</td>
-							<td width='16%' class='aa'></td>
+							<td align='left' width='5%' >" . $fileInfo_name . "&nbsp;&nbsp;&nbsp;&nbsp;上传成功！</td>
 						</tr>";
 		$fileInfo_name . '上传成功<br/>';
 
