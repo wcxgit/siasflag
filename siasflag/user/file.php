@@ -25,11 +25,15 @@ function getDate(page){
 			var list = json.list;
 
 			$.each(list,function(index,array){//遍历数据
-				li+="<li><a href='../sias"+array['url']+"'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题："+array['title']+"&nbsp;&nbsp;&nbsp;</p><span>日期："+array['time']+"</span></a></li>";
+				if(array['url'] == '../user/file detail.php'){
+					li+="<li><a href='javascript:;' onclick='getTitleTime(\""+array['title']+"\",\""+array['time']+"\");'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>"+array['title']+"</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>"+array['time']+"</span></span></a></li>";
+				}else{
+					li+="<li><a href='"+array['url']+"' onclick='getTitleTime(\""+array['title']+"\",\""+array['time']+"\");'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>"+array['title']+"</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>"+array['time']+"</span></span></a></li>";
+				}
 			});
-			
-			$('#files').append(li);
-		},
+/*			onclick="getTitleTime('"+array['title']+"');"
+*/			$('#files').append(li);
+},
 		complete:function(){//数据加载完成后生成分页条
 			getPageBar();
 		},
@@ -74,6 +78,28 @@ function jump(ref){
 	if(ref){
 		getDate(ref);
 	}
+}
+
+//获取链接的标题和时间
+function getTitleTime(listTitle,listTime){
+	location.href='file detail.php?listTitle='+listTitle+'&listTime='+listTime;
+	/*$('#con').empty();*/
+	/*$.ajax({
+		type:'GET',
+		url:'file detail.php?listTitle='+listTitle+'&listTime='+listTime,
+		
+		success:function(data){
+			$('#con').html(data[0]);
+			
+		},
+		error:function(data){
+			alert(data.status);
+		},
+		complete:function(){
+
+		}
+		
+	});*/
 }
 </script>
 </head>

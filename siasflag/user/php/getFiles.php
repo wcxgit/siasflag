@@ -62,52 +62,24 @@ if($id == 3){
 			);
 	}
 	echo json_encode($arr);
-	/*echo ' <div class="file">
-	<ul id="files">';
-		while($row = mysql_fetch_array($result)){
-			echo ' <li><a href="../sias'.$row['url'].'"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：'.$row['title'].'&nbsp;&nbsp;&nbsp;</p><span>日期：'.$row['time'].'</span></a></li>';
-		}
-		echo '</ul></div>';
-		echo '<div id="page">
-		<ul>';
-		echo '<ul>';*/
-			/*if($p>1){
-				echo '<li><a href="'$_SERVER["PHP_SELF"]'?'{$p-1}'"><</a></li>';
-			}else{
-				echo '<li><span><</span></li>';
-			}*/
-			/*<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">6</a></li>
-			<li><a href="#">></a></li>*/
-		/*echo '</ul>';
-		echo '</ul></div>';
+}
 
-
-		echo '<ul>
-		<li><a href="#"><</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
-		<li><a href="#">6</a></li>
-		<li><a href="#">></a></li>
-	</ul></div>';*/
-
-
-
-
-	/*$files = mysql_query($sql);
-	if(!$files){
-		echo "查询出错：".mysql_error();
+if($id==4){
+	$title = $_GET['listTitle'];//点击文件的标题
+	$time = $_GET['listTime'];//点击文件的创建时间
+	$sql = "select text from file where title='{$title}'&&time='{$time}'";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo '查询文档失败：'.mysql_error();
+		exit();
 	}
-	while($row = mysql_fetch_array($files)){
-		echo ' <li><a href="../sias'.$row['url'].'"><img src="images/file_01.png"><p>&nbsp;&nbsp;标题：'.$row['title'].'&nbsp;&nbsp;&nbsp;</p><span>日期：'.$row['time'].'</span></a></li>';
-	}*/
+	$row = mysql_fetch_row($result);
+	if(!$row){
+		echo '出错啦：'.mysql_error();
+		exit();
+	}
+	echo $row[0];
+
 }
 
 

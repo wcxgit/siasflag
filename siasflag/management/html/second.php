@@ -147,7 +147,7 @@
 														<br>
 														<table id="item" width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#66CC99" align="center">
 															<tr>
-																<td height="22" colspan="4" align="center" class="ac"><span id="rank"></span>级列表</td>
+																<td height="22" colspan="4" align="center" class="ac"><span id="rank"></span>级在队人员列表</td>
 															</tr>
 															<tr align="center" bgcolor="#EEEEEE">
 																<td width="10%">姓名</td>
