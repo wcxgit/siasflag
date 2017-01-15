@@ -70,10 +70,10 @@ $.ajax({
 				</li>
 			</ul>";
 		} else {
-			$id = $_SESSION['sid'];
+			$id = $_SESSION['user'];
 			echo "<ul>
 			<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
-			<li><a href='php/loginOut.php?id=$id'>退出登录</li>
+			<li><a href='php/loginOut.php'>退出登录</li>
 		</ul>";
 	}
 	?>
@@ -116,12 +116,13 @@ $.ajax({
 	</li>';
 }
 ?>
-
-<li>
-	<a href="message.php">
-		留言板
-	</a>
-</li>
+<?php
+if(!$_SESSION[user]){
+	echo '<li><a href="javascript:;">留言板</a></li>';
+}else{
+	echo  '<li><a href="message.php">留言板</a></li>';
+}
+?>
 </ul>
 </div>
 <div class="silder" id="silder">
@@ -139,7 +140,7 @@ $.ajax({
 </div>
 <div id="con">
 	<div class="left">
-		<h3>校 园 活 动</h3>
+		<h3>校 园 活 动 <a href="file.php" style="float: right;">更多>>></a></h3>
 		<ul id="xiaoyuan">
 					
 				</ul>
@@ -147,7 +148,7 @@ $.ajax({
 			<div class="right">
 				<img src="images/index/right_pc.jpg">
 				<div class="sj">
-					<h3>队 内 纪 事</h3>
+					<h3>队 内 纪 事<a href="file.php" style="float: right;">更多>>></h3>
 					<ul id="duinei">
 						
 					</ul>

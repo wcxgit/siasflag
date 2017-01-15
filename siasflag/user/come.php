@@ -13,7 +13,7 @@
      <h1><a href="index.html"><img src="images/logo.png"></a></h1>
 	 <ul>
 	     <?php 
-				if(!$_SESSION["Passed"]){  
+				if(!$_SESSION["user"]){  
 		  			 echo "<ul>
 								<li>
 									<a href='login.html'>登录</a>
@@ -39,8 +39,25 @@
            <li><a href="depShow.php">荣誉展示</a></li>
            <li><a href="file.php">文件列表</a></li>
 		   <li><a href="picture.php">照片墙</a></li>
-           <li><a href="come.php">加入我们</a></li>
-		   <li><a href="message.php">留言板</a></li>
+        	<?php
+		if ($_SESSION['on-off']) {
+			echo '<li>
+			<a href="come.php">加入我们</a>
+		</li>';
+	}else{
+		echo '<li>
+		<a href="javascript:;" onclick="msg();">加入我们</a>
+	</li>';
+}
+?>
+<?php
+if(!$_SESSION[user]){
+	echo '<li><a href="javascript:;">留言板</a></li>';
+}else{
+	echo  '<li><a href="message.php">留言板</a></li>';
+}
+?>
+		  
 	   </ul>
 </div>
 <div id="con">
@@ -68,7 +85,6 @@
 			  <p>3、地点三；</p>
 			  <p>4、地点四。</p></span>
 	          <p>联系方式：&nbsp;&nbsp;qq群：123123123123&nbsp;&nbsp;微博：西亚斯国旗护卫队&nbsp;&nbsp; 手机：123123123<br /> 你也可通过本站进行申请：</p><br /></span>
-			<button>申请加入</button>
 	   </div>
 	   </div>   
 </div>
