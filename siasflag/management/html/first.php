@@ -32,7 +32,7 @@
 
 					$.each(list,function(index,array){
 						
-						table+='<tr bgcolor="#FFFFFF" align="center" class="az"><td>'+array["username"]+'</td><td>'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="#">删除</a></td></tr>';
+						table+='<tr  align="center" class="az"><td class="name">'+array["username"]+'</td><td class="time">'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
 					});
 					$('#list').append(table);
 				},
@@ -83,10 +83,32 @@
 			var turnP = $('#turnP').val();
 			getData(turnP);
 		}
+
+		/*初始化分页条*/
 		$(function(){
 			getData(1);
-		})
+		});
 		
+		/*点击删除*/
+		function del(id,t){
+ 			var flag = confirm('确定要删除此数据？');
+			if(flag){
+				$.ajax({
+					type:'GET',
+					url:'../php/deleteTable.php?id='+id,
+					success:function(data){
+						alert(data);
+					},
+					error:function(msg){
+						alert(msg.status);
+					},
+					complete:function(){
+						$(t).parent().parent().empty();
+					}
+				});
+			}
+
+		}
 	</script>
 </head>
 
@@ -139,49 +161,49 @@
 						</a>
 					</li>
 				</ul>
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td>
-								<table id="subtree1" style="DISPLAY: " width="100%" border="0" cellspacing="0" cellpadding="0">
-									<tr>
-										<td>
-											<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<table id="subtree1" style="DISPLAY: " width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+											<tr>
+												<td height="40">
+													<br>
+													<table id="item" width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#66CC99" align="center">
+														<tr>
+															<td height="22" colspan="4" align="center" class="ac"><span id="rank"></span>级在队人员列表</td>
+														</tr>
+														<tr align="center" bgcolor="#EEEEEE">
+															<td width="10%">姓名</td>
+															<td width="10%">创建时间</td>
+															<td width="12%">操作</td>
+														</tr>
+														<tbody id="list">
+
+														</tbody>
+													</table></td>
+												</tr>
+											</table>
+											<table  width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
 												<tr>
-													<td height="40">
-														<br>
-														<table id="item" width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#66CC99" align="center">
-															<tr>
-																<td height="22" colspan="4" align="center" class="ac"><span id="rank"></span>级在队人员列表</td>
-															</tr>
-															<tr align="center" bgcolor="#EEEEEE">
-																<td width="10%">姓名</td>
-																<td width="10%">创建时间</td>
-																<td width="12%">操作</td>
-															</tr>
-															<tbody id="list">
-																
-															</tbody>
-														</table></td>
-													</tr>
-												</table>
-												<table  width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
-													<tr>
-														<td height="6">
-															<img src="../img/spacer.gif" width="1" height="1" />
-														</td>
-													</tr>
-													<tr>
-														<td height="33" id="pageBar">
-														</td>
-														<td></td>
-														<td></td>
-													</tr>
-												</table></td>
-											</tr>
-										</table></td>
-									</tr>
-								</table></td>
-							</tr>
-						</table>
+													<td height="6">
+														<img src="../img/spacer.gif" width="1" height="1" />
+													</td>
+												</tr>
+												<tr>
+													<td height="33" id="pageBar">
+													</td>
+													<td></td>
+													<td></td>
+												</tr>
+											</table></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
 				</body>
 				</html>

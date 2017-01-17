@@ -1,6 +1,6 @@
 <?php
-	include 'conn.php';
-	$rank = $_POST['rank'];
+include 'conn.php';
+$rank = $_POST['rank'];
 	$page = $_POST['pageNum'];//当前页
 	mysql_query('set names utf8');
 	//查询数据总条数
@@ -31,32 +31,9 @@
 	while ($row = mysql_fetch_assoc($pageSql)) {
 		$arr['list'][] = array(
 			'username'=>$row['name'],
-			'time'=>$row['create_time']
+			'time'=>$row['create_time'],
+			'id'=>$row['id']
 			);
 	}
 	echo json_encode($arr);
-	/*echo '<tr>
-														<td height="22" colspan="4" align="center" class="ac">'.$rank.'级列表</td>
-													</tr>
-													<tr align="center" bgcolor="#EEEEEE">
-														<td width="10%">用户名</td>
-														<td width="10%">创建时间</td>
-														<td width="12%">操作</td>
-													</tr>';
-	while($row = mysql_fetch_array($result)){
-		echo '<tr bgcolor="#FFFFFF" align="center" class="az">
-														
-														<td>
-															<a href="#" onclick=""></a>'.$row["name"].'</td>
-														<td>'.$row["create_time"].'</td>
-														<td class="ad">
-															<a href="../html/alter.php">
-																修改
-															</a>｜
-															<a href="#">
-																删除
-															</a></td>
-													</tr>';
-	}
-	*/
 	?>

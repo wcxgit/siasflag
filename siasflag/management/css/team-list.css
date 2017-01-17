@@ -57,8 +57,11 @@ a:hover{
    color:#FF00FF;
    text-decoration:underline;
 }
+
 tr.az{
-    font-size:12px;}
+    font-size:12px;
+    background: #fff;
+  }
 
 
 td.ab{
