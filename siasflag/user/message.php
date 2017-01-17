@@ -6,6 +6,61 @@ error_reporting(0);?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>留言板</title>
 <link rel="stylesheet" type="text/css" href="css/message.css">
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*获取需要填充的数据*/
+	$(function(){
+		var name = $('#username').val();
+		$.ajax({
+			type:'POST',
+			url:'php/application.php',
+			data:{
+				"username":name,
+				"id":1	
+			},
+			success:function(data){
+				var json = JSON.parse(data);
+				$('#mail').val(json.mail);
+				$('#phone').val(json.tel);
+			},
+			error:function(msg){
+				alert(msg.status);
+			}
+		});
+	});
+	/*清空*/
+	function reset(){
+		$('#title').val('');
+		$('#context').val('');
+	}
+	/*提交数据*/
+	function submit(){
+		var name = $('#username').val();
+		var mail = $('#mail').val();
+		var tel = $('#phone').val();
+		var title = $('#title').val();
+		var context = $('#context').val();
+		alert (tel);
+		$.ajax({
+			type:'POST',
+			url:'php/application.php',
+			data:{
+				"id":3,
+				"name":name,
+				"mail":mail,
+				"tel":tel,
+				"title":title,
+				"context":context
+			},
+			success:function(data){
+				alert(data);
+			},
+			error:function(msg){
+				alert(msg.status);
+			}
+		});
+	}
+</script>
 </head>
 
 <body>
@@ -73,35 +128,33 @@ if(!$_SESSION[user]){
 	  </div>
 	   <div class="right">
 	       <pre>请留言：</pre>
-	        <form action="" method="post" name="message" onsubmit="return validatef1()">
            <label>
-		      <p>
+		      <p style="margin-top: 20px">
                 <span>姓名</span>
-                <input type="text" name="username" class="input" readonly="" /> 
+                <input type="text" id="username" class="input" value="<?php echo $_SESSION['user'];?>" readonly="" /> 
                 </p><br />
 			  <p>
                 <span>电子邮箱</span>
-                <input type="text" name="email" class="input"/>
+                <input type="text" id="mail"  class="input"/>
 	          </p><br />
              <p>
                 <span>联系电话</span>
-                <input type="text" name="phone" class="input"/>
+                <input type="text" id="phone" class="input"/>
 	      </p>
 	      <br>
 	      <p>
                 <span>标题</span>
-                <input type="text" name="title" class="input"/> 
+                <input type="text" id="title" class="input"/> 
                 </p><br />
 			  <p><br />
 
 		        <span>留言</span>
-                <textarea name="txtSendContent" id="txtSendContent" cols="50" rows="5" style="margin-bottom:15px"></textarea>
+                <textarea name="txtSendContent" id="context" cols="50" rows="5" style="margin-bottom:15px"></textarea>
           </br>
-          <p>
-                <input type="reset" name="reset" value="重置" class="btn" />
-                <input type="submit" name="Submit" value="提交" class="btn" />
+          <p style="margin-top: 80px">
+                <input type="reset" name="reset" value="重置" class="btn" onclick="reset();" />
+                <input type="submit" name="Submit" value="提交" class="btn" onclick="submit();" />
           </p></label>
-          </form>
 
 
        </div>

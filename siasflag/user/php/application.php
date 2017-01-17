@@ -13,7 +13,7 @@ if($id == 1){
 		echo '查询出错：'.mysql_error();
 	}
 	$row = mysql_fetch_row($result);
-	$array = array('username' => $row[3],'sex'=> $row[7],'tel'=>$row[1] );
+	$array = array('username' => $row[3],'sex'=> $row[7],'tel'=>$row[1],'mail'=>$row[2] );
 	$json = json_encode($array);
 	echo $json;
 }elseif($id ==2 ){
@@ -34,8 +34,23 @@ if($id == 1){
 	}else{
 		echo '申请成功！';
 	}
-
-
+}elseif ($id == 3) {
+	//获取留言板数据
+	$name = $_POST['name'];
+	$tel = $_POST['tel'];
+	$mail = $_POST['mail'];
+	$title = $_POST['title'];
+	$context = $_POST['context'];
+	$time = date('Y-m-d');
+	//写入提交的数据
+	$sql = "insert message (name,title,message,time,mail,tel) values ('$name','$title','$context','$time','$mail','$tel')";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo "留言失败：".mysql_error();
+		exit();
+	}else{
+		echo "留言成功，请等待管理员回复☺";
+	}
 }
 
 

@@ -32,7 +32,7 @@
 
 					$.each(list,function(index,array){
 						
-						table+='<tr bgcolor="#FFFFFF" align="center" class="az"><td>'+array["username"]+'</td><td>'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="#">删除</a></td></tr>';
+						table+='<tr bgcolor="#FFFFFF" align="center" class="az"><td>'+array["username"]+'</td><td>'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
 					});
 					$('#list').append(table);
 				},
@@ -86,6 +86,27 @@
 		$(function(){
 			getData(1);
 		})
+
+		/*点击删除*/
+		function del(id,t){
+ 			var flag = confirm('确定要删除此数据？');
+			if(flag){
+				$.ajax({
+					type:'GET',
+					url:'../php/deleteTable.php?id='+id,
+					success:function(data){
+						alert(data);
+					},
+					error:function(msg){
+						alert(msg.status);
+					},
+					complete:function(){
+						$(t).parent().parent().empty();
+					}
+				});
+			}
+
+		}
 		
 	</script>
 </head>
