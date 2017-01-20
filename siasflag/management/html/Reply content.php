@@ -40,7 +40,7 @@
     <tr>
     <tr>
         <td><textarea id="editor_id" name="content" style="width: 100%;height:300px;">
-&lt;strong&gt;HTML内容&lt;/strong&gt;
+
 </textarea></td>
     <tr>
     <tr>
@@ -54,11 +54,11 @@
 <script src="../kindeditor-4.1.10/kindeditor.js"></script>
 <script src="../kindeditor-4.1.10/lang/zh_CN.js"></script>
 <script>
-    KindEditor.ready(function (K) {
+   /* KindEditor.ready(function (K) {
         window.editor = K.create('#editor_id', {
             themeType : 'simple'
         });
-    });
+    });*/
 </script>
 </body>
 </html>

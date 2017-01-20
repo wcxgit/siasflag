@@ -40,7 +40,6 @@ error_reporting(0);?>
 		var tel = $('#phone').val();
 		var title = $('#title').val();
 		var context = $('#context').val();
-		alert (tel);
 		$.ajax({
 			type:'POST',
 			url:'php/application.php',

@@ -19,12 +19,20 @@ $of = $_POST['of'];
 if ($of == 'off') {
 	//点击关闭单选按钮
 	$sql = 'update switch set flag = 0';
-	mysql_query($sql, $con);
+	$result = mysql_query($sql, $con);
+	if(!$result){
+		echo '设置失败：'.mysql_error();
+		exit();
+	}
 	$_SESSION['on-off'] = false;
 } else {
 	//点击开启单选按钮
 	$sql = 'update switch set flag = 1';
-	mysql_query($sql, $con);
+	$result = mysql_query($sql, $con);
+	if(!$result){
+		echo '设置失败：'.mysql_error();
+		exit();
+	}
 	$_SESSION['on-off'] = true;
 }
 ?>

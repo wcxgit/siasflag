@@ -5,6 +5,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>联系我们</title>
 <link rel="stylesheet" type="text/css" href="css/contact.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			type:'GET',
+			url:'/php/getFiles.php?id=5',
+			success:function(data){
+
+			},
+			error:function(msg){
+				alert(msg.status);
+			}
+		});
+	});
+</script>
 </head>
 
 <body>
