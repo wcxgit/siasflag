@@ -17,8 +17,7 @@ if($id==1){
 			'</a><span>'.$row['time'].'</span>
 		</li>';
 	}
-}
-if($id == 2){
+}elseif($id == 2){
 	$sql2= "select * from file where flag = 2";
 	$duinei = mysql_query($sql2,$con);
 	if(!$duinei){
@@ -31,8 +30,7 @@ if($id == 2){
 		</a>
 	</li>';
 }
-}
-if($id == 3){
+}elseif($id == 3){
 	$page = $_GET['pageNum'];//起始页
 
 	//获取数据总数
@@ -56,15 +54,13 @@ if($id == 3){
 	}
 	while($row = mysql_fetch_array($result)){
 		$arr['list'][] = array(
-				'url'=>$row['url'],
-				'title'=>$row['title'],
-				'time'=>$row['time']
+			'url'=>$row['url'],
+			'title'=>$row['title'],
+			'time'=>$row['time']
 			);
 	}
 	echo json_encode($arr);
-}
-
-if($id==4){
+}elseif($id==4){
 	$title = $_GET['listTitle'];//点击文件的标题
 	$time = $_GET['listTime'];//点击文件的创建时间
 	$sql = "select text from file where title='{$title}'&&time='{$time}'";
@@ -80,7 +76,26 @@ if($id==4){
 	}
 	echo $row[0];
 
+}elseif($id == 5){//获取联系我们内容
+	$sql = "select * from report";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo '查询失败：'.mysql_error();
+		exit();
+	}
+	$arr['list'] = '';
+
+	while ( $row = mysql_fetch_array($result)) {
+		$arr['list'][] = array(
+			'qq'=>$row['qq'],
+			'weibo'=>$row['weibo'],
+			'wechat'=>$row['wechat']
+			);
+	};
+	
+	echo json_encode($arr);
 }
+
 
 
 mysql_close($con);

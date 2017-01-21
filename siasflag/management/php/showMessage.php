@@ -15,7 +15,7 @@ if($id == 1){//获取所有留言信息
 	 $startPage = ($curPage-1)*15;//分页查询起始页
 
 	 /*分页查询*/
-	 $pageSql = "select * from message order by time desc limit {$startPage},{$pageSize}";
+	 $pageSql = "select * from message where isNull(flag) order by time desc limit {$startPage},{$pageSize}";
 	 $pageResult = mysql_query($pageSql);
 	 if(!$pageResult){
 	 	echo '分页查询失败：'.mysql_error();
@@ -86,7 +86,7 @@ if($id == 1){//获取所有留言信息
 				exit();
 			}
 			echo '删除成功！';
-		}else{
+		}elseif($id == 4){//查询详情
 			$num = $_GET['num'];
 			$sql= "select message from message where id = {$num}";
 			$result = mysql_query($sql);
@@ -96,6 +96,32 @@ if($id == 1){//获取所有留言信息
 			}
 			$message = mysql_result($result,0);
 			echo $message;
+		}elseif($id == 5){//回复留言
+			$num = $_GET['num'];//所回复的留言对应的id
+			$ask = $_GET['message'];
+			$time = date('Y-m-d');
+			$sql = "insert message (ask,time,flag) values ('{$ask}','{$time}',{$num})";
+			$result = mysql_query($sql);
+			if(!$result){
+				echo '回复失败：'.mysql_error();
+				exit();
+			}else{
+				echo '回复成功！';
+			}
+		}elseif($id == 6){//显示回复留言的信息
+			$sql = "select * from message where flag !=''";
+			$result = mysql_query();
+			if(!$result){
+				echo "查询失败：".mysql_error();
+			}
+			$arr['list'] = '';
+			while($row = mysql_fetch_assoc($result)){
+				$arr['list'][] = $array(
+					'title' => $row['title'],
+					'ask' => $row['ask']
+					);
+			}
+			echo json_encode($arr);
 		}
 
 

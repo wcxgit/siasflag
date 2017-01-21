@@ -10,9 +10,15 @@
 	$(function(){
 		$.ajax({
 			type:'GET',
-			url:'/php/getFiles.php?id=5',
+			url:'php/getFiles.php?id=5',
 			success:function(data){
-
+				var json = JSON.parse(data);
+				var list = json.list[0];
+				var wechat = list.wechat;
+				alert (wechat);
+				$('#wechat').html(list.wechat);
+				$('#qq').html(list.qq);
+				$('#weibo').html(list.weibo);
 			},
 			error:function(msg){
 				alert(msg.status);
@@ -88,13 +94,13 @@ if(!$_SESSION[user]){
 	   <div class="right">
 	   <pre>联系我们：</pre>
 	   <p><img src="images/message/call.png">
-	      <span>负责人：12345678900（小明）&nbsp &nbsp  负责人：12345678900（小红）</span>
+	      <span>微信公众号：<span id="wechat"></span></span>
 	   </p>
 	   <p><img src="images/message/qq.png">
-	      <span>负责人：12345678（小明）&nbsp  负责人：12345678（小红）&nbsp 交流群：12345678</span>
+	      <span>qq：<span id="qq"></span></span>
 	   </p>
 	   <p><img src="images/message/weibo.png">
-	      <span>微博号：1234567890</span>
+	      <span>微博：<span id="weibo"></span></span>
 	   </p>
 	   
 	   </div>   
