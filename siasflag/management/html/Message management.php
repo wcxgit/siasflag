@@ -33,9 +33,9 @@ error_reporting(0);?>
 					curPage =json.curPage;
 					var dataStr = '';
 					var id = json.id;
-					dataStr = '<tr><td height="22" colspan="4" align="center" class="ac">留言列表</td></tr><tr align="center" bgcolor="#EEEEEE"><td width="10%">昵称</td><td width="10%">内容</td><td width="12%">留言时间</td><td width="12%">操作</td></tr>';
+					dataStr = '<tr><td height="22" colspan="4" align="center" class="ac">留言列表</td></tr><tr align="center" bgcolor="#EEEEEE"><td width="10%">昵称</td><td width="10%">标题</td><td width="12%">留言时间</td><td width="12%">操作</td></tr>';
 					$.each(list, function(index,array){
-						dataStr+='<tr bgcolor="#FFFFFF" align="center" class="az"><td><a href="#" onclick=""></a>'+array['name']+'</td><td>'+array['context']+'</td><td class="ad">'+array['time']+'</td> <td class="ad"><a href="javascript:;">删除</a>|<a href="Reply content.php">回复</a>|<a href="javascript:;">详细</a></td></tr>';
+						dataStr+='<tr bgcolor="#FFFFFF" align="center" class="az"><td><a href="#" onclick=""></a>'+array['name']+'</td><td class="ad">'+array['title']+'</td><td class="ad">'+array['time']+'</td> <td class="ad"><a href="javascript:;" onclick="del('+array['id']+',this)">删除</a>|<a href="Reply content.php?id='+array['id']+'">回复</a>|<a href="javascript:;" onclick="detail('+array['id']+');">详细</a></td></tr>';
 					});
 					$('#list').append(dataStr);
 					
@@ -109,19 +109,19 @@ error_reporting(0);?>
 						success:function(data){
 							
 							var dataStr = '';
-							dataStr = '<tr><td height="22" colspan="4" align="center" class="ac">留言列表</td></tr><tr align="center" bgcolor="#EEEEEE"><td width="10%">昵称</td><td width="10%">内容</td><td width="12%">留言时间</td><td width="12%">操作</td></tr>';
+							dataStr = '<tr><td height="22" colspan="4" align="center" class="ac">留言列表</td></tr><tr align="center" bgcolor="#EEEEEE"><td width="10%">昵称</td><td width="10%">标题</td><td width="12%">留言时间</td><td width="12%">操作</td></tr>';
 							
 							var json = JSON.parse(data);
 							if(json.msg == '无留言！'){
 								alert(json.msg);
 							}else{
 								var context = json.context;
-							var time = json.time;
-							var list = json.list;
-							totalPage = json.totalPage;
-							curPage =json.curPage;
+								var time = json.time;
+								var list = json.list;
+								totalPage = json.totalPage;
+								curPage =json.curPage;
 								$.each(list, function(index,array){
-									dataStr+='<tr bgcolor="#FFFFFF" align="center" class="az"><td><a href="#" onclick=""></a>'+array['name']+'</td><td>'+array['message']+'</td><td class="ad">'+array['time']+'</td> <td class="ad"><a href="#">删除</a>|<a href="Reply content.html">回复</a></td></tr>';
+									dataStr+='<tr bgcolor="#FFFFFF" align="center" class="az"><td><a href="#" onclick=""></a>'+array['name']+'</td><td class="ad">'+array['title']+'</td><td class="ad">'+array['time']+'</td> <td class="ad"><a href="javascript:;" onclick="del('+array['id']+',this)">删除</a>|<a href="Reply content.php?id='+array['id']+'">回复</a>|<a href="javascript:;" onclick="detail('+array['id']+');">详细</a></td></tr>';
 								});
 							}
 							
@@ -174,9 +174,43 @@ error_reporting(0);?>
 						pageBar+='| <a href="javascript:;" onclick="jumpS('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jumpS('+totalPage+')">末页</a>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
 					}
 					
-					pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc" onclick="turnPageS()"/></td></tr></table></td><td></td><td></td></tr>';
+					pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc"  onclick="turnPageS()"/></td></tr></table></td><td></td><td></td></tr>';
 
 					$('#pageBar').html(pageBar);
+				}
+
+				/*删除*/
+				function del(id,t) {
+					var flag = confirm('确定要删除此数据吗？')
+					if(flag){
+						$.ajax({
+							type:'GET',
+							url:'../php/showMessage.php?id=3&num='+id,
+							success:function (data) {
+								alert(data);
+							},
+							error:function(msg){
+								alert(msg.status);
+							},
+							complete:function(){
+								$(t).parent().parent().empty();
+							}
+						});
+					}
+					
+				}
+				/*查看详情*/
+				function detail(id){
+					$.ajax({
+						type:'GET',
+						url:'../php/showMessage.php?id=4&num='+id,
+						success:function(data){
+							alert(data);
+						},
+						error:function(msg){
+							alert(msg.status);
+						}
+					});
 				}
 			</script>
 		</head>
@@ -195,8 +229,6 @@ error_reporting(0);?>
 												<?php
 												if ($_SESSION["Passed"]) {
 													echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
-												}else{
-
 												}
 												?>
 											</tr>

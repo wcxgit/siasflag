@@ -4,7 +4,7 @@ mysql_query('set names utf8');
 /*显示留言信息*/
 
 $id = $_GET['id'];
-if($id == 1){
+if($id == 1){//获取所有留言信息
 	 	$curPage = $_GET['page'];//当前页数
 	 	$pageSize = 15;//每页显示条数
 	 	/*获取记录总数*/
@@ -25,15 +25,18 @@ if($id == 1){
 	 $arr['curPage'] = $curPage;
 	 $arr['totalPage'] = $totalPage;
 	 $arr['list'] = '';
+
 	 while($row = mysql_fetch_array($pageResult)){
 	 	$arr['list'][] = array(
 	 		'name'=> $row['name'],
 	 		'context' => $row['message'],
-	 		'time' => $row['time']
+	 		'time' => $row['time'],
+	 		'id'=>$row['id'],
+	 		'title'=>$row['title']
 	 		);
 	 }
 	 echo json_encode($arr);
-	}elseif($id == 2){
+	}elseif($id == 2){//获取所搜索的留言信息
 		$curPage = $_GET['page'];//当前页数
 	 	$pageSize = 15;//每页显示条数
 		$msg = $_GET['serch'];//搜索的姓名
@@ -63,7 +66,8 @@ if($id == 1){
 		 		'name'=>$row['name'],
 		 		'message'=>$row['message'],
 		 		'time'=>$row['time'],
-		 		'id'=>$row['id']
+		 		'id'=>$row['id'],
+		 		'title'=>$row['title']
 		 		);
 		 }
 		 if ($arr['list']=="") {
@@ -73,6 +77,25 @@ if($id == 1){
 		 	echo json_encode($arr);
 		 }
 
+		}elseif($id==3){//删除指定的留言信息
+			$num = $_GET['num'];//所要删除的留言信息在数据库中对应的id
+			$sqlDel = "delete  from message where id={$num}";
+			$result = mysql_query($sqlDel);
+			if(!$result){
+				echo '删除失败!'.mysql_error();
+				exit();
+			}
+			echo '删除成功！';
+		}else{
+			$num = $_GET['num'];
+			$sql= "select message from message where id = {$num}";
+			$result = mysql_query($sql);
+			if(!$result){
+				echo '查询失败：'.mysql_error();
+				exit();
+			}
+			$message = mysql_result($result,0);
+			echo $message;
 		}
 
 
