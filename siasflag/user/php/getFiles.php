@@ -12,7 +12,7 @@ if($id==1){
 	}
 	while($row = mysql_fetch_array($xiaoyuan)){
 		echo '<li>
-		<a href="../sias'.$row['url'].'">'
+		<a href="'.$row['url'].'">'
 			.$row['title'].
 			'</a><span>'.$row['time'].'</span>
 		</li>';
@@ -25,7 +25,7 @@ if($id==1){
 	}
 	while($row=mysql_fetch_array($duinei)){
 		echo '<li>
-		<a href="../sias'.$row['url'].'">
+		<a href="'.$row['url'].'">
 			'.$row['title'].'
 		</a>
 	</li>';

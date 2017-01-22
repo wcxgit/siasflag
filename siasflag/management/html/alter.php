@@ -41,17 +41,10 @@ error_reporting(0);?>
    <form action="" method="post" name="message" onsubmit="return validatef1()">
            <label>
 		      <p>
-                <span>用户名</span>
+                <span>姓名</span>
                 <input type="text" name="username" class="input"/> 
                 </p><br />
-			  <p>
-                <span>密码</span>
-                <input type="text" name="password" class="input"/>
-	          </p><br />
-             <p>
-                <span>电子邮箱</span>
-                <input type="text" name="email" class="input"/>
-	      </p>
+			  
           </br>
           <p>
                 <input type="reset" name="reset" value="重置" class="btn" />

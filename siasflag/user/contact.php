@@ -15,7 +15,6 @@
 				var json = JSON.parse(data);
 				var list = json.list[0];
 				var wechat = list.wechat;
-				alert (wechat);
 				$('#wechat').html(list.wechat);
 				$('#qq').html(list.qq);
 				$('#weibo').html(list.weibo);

@@ -106,7 +106,7 @@ if($id == 1){//获取所有留言信息
 				echo '回复失败：'.mysql_error();
 				exit();
 			}else{
-				echo '回复成功！';
+				echo '回复成功!';
 			}
 		}elseif($id == 6){//显示回复留言的信息
 			$sql = "select * from message where flag !=''";
@@ -116,7 +116,7 @@ if($id == 1){//获取所有留言信息
 			}
 			$arr['list'] = '';
 			while($row = mysql_fetch_assoc($result)){
-				$arr['list'][] = $array(
+				$arr['list'][] = array(
 					'title' => $row['title'],
 					'ask' => $row['ask']
 					);

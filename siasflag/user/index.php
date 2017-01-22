@@ -33,6 +33,7 @@ $.ajax({
 		alert (data.status);
 	}
 });
+/*填充队内纪事*/
 $.ajax({
 	method:'get',
 	url:'php/getFiles.php?id=2&r='+Math.random(),

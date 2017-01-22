@@ -4,7 +4,7 @@ error_reporting(0);
 header("Content-Type:html/text;charset=utf-8");
 $con = mysql_connect("localhost", "root", "root");
 mysql_select_db("siasflag", $con);
-mysql_query("set names utf-8");
+mysql_query("set names utf8");
 $id = $_GET["id"];
 
 
