@@ -1,27 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php session_start();?>
+<?php session_start();
+error_reporting(0);?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-	<script src="js/easySlider.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			$("#slider").easySlider( {
-				slideSpeed: 500,
-				paginationSpacing: "15px",
-				paginationDiameter: "12px",
-				paginationPositionFromBottom: "20px",
-				slidesClass: ".slides",
-				controlsClass: ".controls",
-				paginationClass: ".pagination"					
-			});
-		});
-	</script>
-
-	<title>部门介绍</title>
 	<link rel="stylesheet" type="text/css" href="css/about.css">
 	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="js/easySlider.js"></script>
+	<script src="js/about.js"></script>
+
+	<title>部门介绍</title>
+	
 </head>
 
 <body>
@@ -67,7 +57,7 @@
 ?>
 <?php
 if(!$_SESSION[user]){
-	echo '<li><a href="javascript:;">留言板</a></li>';
+	echo '<li><a href="javascript:;" onclick="log();">留言板</a></li>';
 }else{
 	echo  '<li><a href="message.php">留言板</a></li>';
 }

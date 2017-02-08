@@ -5,50 +5,13 @@ error_reporting(0);?>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery.img_silder.js"></script>
-	<script>$(function() {
-		$('#silder').imgSilder({
-		s_width: '980', //容器宽度
-		s_height: 390, //容器高度
-		is_showTit: true, // 是否显示图片标题 false :不显示，true :显示
-		s_times: 3000, //设置滚动时间
-		css_link: 'css/index.css'
-	});
-		
-	});
-	function msg(){
-		alert('暂未开放此功能！');
-	}
-
-//填充校园活动
-$.ajax({
-	method:'get',
-	url:'php/getFiles.php?id=1&r='+Math.random(),
-	success:function(data){
-		$('#xiaoyuan').html(data);
-	},
-	error:function(data){
-		alert (data.status);
-	}
-});
-/*填充队内纪事*/
-$.ajax({
-	method:'get',
-	url:'php/getFiles.php?id=2&r='+Math.random(),
-	success:function(data){
-		$('#duinei').html(data);
-	},
-	error:function(data){
-		alert (data.status);
-	}
-});
-
-</script>
+	<script src="js/index.js"></script>
 
 <title>西亚斯国旗护卫队</title>
-<link rel="stylesheet" type="text/css" href="css/index.css">
 
 </head>
 
@@ -119,7 +82,7 @@ $.ajax({
 ?>
 <?php
 if(!$_SESSION[user]){
-	echo '<li><a href="javascript:;">留言板</a></li>';
+	echo '<li><a href="javascript:;" onclick="log();">留言板</a></li>';
 }else{
 	echo  '<li><a href="message.php">留言板</a></li>';
 }

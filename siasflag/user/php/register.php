@@ -15,14 +15,52 @@ if($sex == 1){
 }else{
 	$sex = '女';
 }
-echo $sex;
-		//插入数据 
+/*验证数据是否已存在*/
+function chkNmae(){
+	$sqlName = "select username from user where username = '{$name}'";
+	$resultName = mysql_query($sqlName);
+	if(!$resultName){
+		echo "用户名失败！";
+	}
+	if(mysql_fetch_array($resultName)){
+		echo mysql_fetch_array($resultName);
+		echo '用户名已被注册!';
+		exit();
+	}
+}
+function chkTel(){
+	$sqlMail = "select mail from user where mail = '{$mail}'";
+	$resultMail = mysql_query($sqlMail);
+	if(!$resultMail){
+		echo "邮箱失败！";
+	}
+	if(mysql_fetch_array($resultTel)){
+		echo '电话号码已被注册!';
+		exit();
+	}
+}
+function chkMail(){
+	$sqlTel = "select tel from user where tel = '{$tel}'";
+	$resultTel = mysql_query($sqlTel);
+	if(!$resultTel){
+		echo "电话失败！";
+	}
+
+	elseif(mysql_fetch_array($resultMail)){
+		echo "邮箱已被注册!";
+		exit();
+	}
+}
+
+
+//插入数据 
 $sql = "insert into user (tel,mail,username,password,flag,creat_time,sex) values ('$tel','$mail','$name','$pwd','0','$time','$sex')";
 $result = mysql_query($sql);
 if(!$result){
 	echo "注册失败：".mysql_error();
 }else{
-	echo "<a href='../login.html'>注册成功,点击返回登录</a>";
+	echo '注册成功，即将跳转到首页！';
+	exit();
 }
 mysql_close($con);
 ?>
