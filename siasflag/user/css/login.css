@@ -5,15 +5,14 @@
 }
 body{
   margin:0 auto;
-  width:1366px;
-  background:url(../images/login.jpg);
+  width:100%;
+  background:url(../images/login.jpg) no-repeat center;
   font-size:12px;
+  background-color: #0588B6;
 }
 #header{
-  width:320px;
-  height:185px;
-  margin:280px 0px 0px 520px;
-  padding-top:15px;
+  width:352px;
+  margin: 307px auto;
 }
 STYLE1 {
 	font-size: 16px;

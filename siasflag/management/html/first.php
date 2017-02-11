@@ -32,7 +32,7 @@
 
 					$.each(list,function(index,array){
 						
-						table+='<tr  align="center" class="az"><td class="name">'+array["username"]+'</td><td class="time">'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
+						table+='<tr  align="center" class="az"><td class="name">'+array["username"]+'</td><td class="time">'+array["time"]+'</td><td><a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
 					});
 					$('#list').append(table);
 				},
@@ -127,8 +127,10 @@
 											<img src="../img/ico02.gif" width="35" height="35" />
 										</td>
 										<?php
-										if ($_SESSION["Passed"]) {
-											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
 										}
 										?>
 									</tr>

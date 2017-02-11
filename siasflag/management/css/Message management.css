@@ -15,8 +15,8 @@ p {
   margin-left: 50px;
 }
 table{
-    width: 100%;   
-            table-layout: fixed; 
+    /*width: 100%;  */ 
+    table-layout: fixed; 
 }
 td {
   }
@@ -38,8 +38,9 @@ a:hover {
   color: #FF00FF;
   text-decoration: underline;
 }
-tr.az,td.ad {
-  font-size: 24px;
+tr.az,
+td.ad {
+ /* font-size: 24px;*/
   white-space: nowrap;/*控制单行显示*/
   overflow: hidden;/*超出隐藏*/
   text-overflow: ellipsis;/*隐藏的字符用省略号表示*/

@@ -6,6 +6,7 @@ error_reporting(0);?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>联系我们</title>
 <link rel="stylesheet" type="text/css" href="css/contact.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -25,6 +26,9 @@ error_reporting(0);?>
 			}
 		});
 	});
+	function msg(){
+		alert('暂未开放此功能！');
+	}
 </script>
 </head>
 
@@ -106,26 +110,11 @@ if(!$_SESSION[user]){
 	   </div>   
 </div>
 <div id="footer">
-           <p>电话：010-12348888　传真：010-88666666　客服电话：400-0809-560<br />
-           西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号</p>
-		   <h3><a href="#top">top</a></h3>
-		   <div class="link">
-		    <a href="#">网站首页</a>
-           <span>|</span>
-	       <a href="#">部门介绍</a>
-           <span>|</span>
-	       <a href="#">荣誉展示</a>
-           <span>|</span>
-	       <a href="#">文件列表</a>
-           <span>|</span>
-	       <a href="#">照片墙</a>
-           <span>|</span>
-	       <a href="#">在队人员</a>
-           <span>|</span>
-	       <a href="#">留言板</a>
-           <span>|</span>
-	       <a href="#">关于我们</a>
-		   </div>
+	<div class="contact">
+		电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
+		<br />
+		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+	</div>
 </div>
 </body>
 </html>

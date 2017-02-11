@@ -3,13 +3,7 @@
   margin:0;
   padding:0;
 }
-body{
-  margin:0 auto;
-  background: #FFFFFF url(../images/bg.png) no-repeat;
-  font-size:12px;
-  color:#616161;
-  background—size:100%;
-}
+
 ul{
   list-style-type:none;
 }
@@ -154,28 +148,7 @@ h1{
   float:left;
   margin:20px 0 0 40px;
 }
-#footer{
-  height:118px;
-  border-top:#c53410 4px solid;
-  background:#000000;
-  font-size:12px;
-}
-#footer p{
-  line-height:20px;
-  float:left;
-  margin:15px 0px 0px 185px;
-  color:#FFFFFF;
-}
-#footer h3 a{
-  float:right;
-  margin-top:65px;
-  color:#fff;
-  font-size:20px; 
-  margin-right:120px;
-}
-#footer h3 a:hover{
-  text-decoration:underline;
-}
+
 .link{
   width:978px;
   height:30px;

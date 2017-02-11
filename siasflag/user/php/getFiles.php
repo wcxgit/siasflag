@@ -94,6 +94,38 @@ if($id==1){
 	};
 	
 	echo json_encode($arr);
+}elseif($id == 6){//获取视频内容
+
+	$page = $_GET['pageNum'];//起始页
+
+	//获取数据总数
+	$sqlTotal = "select * from media";
+
+	$total = mysql_num_rows(mysql_query($sqlTotal));
+
+	$pageSize = 15;//每页显示条数
+	$pageStart = ($page-1)*$pageSize;//页起始位置
+	$totalPage = ceil($total/$pageSize);//总页数
+
+	//封装数据
+	$arr['total'] = $total;
+	$arr['pageSize'] = $pageSize;
+	$arr['totalPage'] = $totalPage;
+	//查询分页
+	$sql = "select * from media order by time desc limit {$pageStart},{$pageSize}";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo '查询失败：'.mysql_error();
+	}
+	while($row = mysql_fetch_array($result)){
+		$arr['list'][] = array(
+			'url'=>$row['url'],
+			'title'=>$row['title'],
+			'time'=>$row['time']
+			);
+	}
+	echo json_encode($arr);
+
 }
 
 

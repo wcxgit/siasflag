@@ -6,6 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>西亚斯国旗护卫队后台管理</title>
 </head>
+<?php 
+    if($_SESSION['super'] || $_SESSION['admin']){
+ ?>
 <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
     <frame src="top.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame"/>
     <frameset cols="213,*" frameborder="no" border="0" framespacing="0">
@@ -14,6 +17,9 @@
     </frameset>
 </frameset>
 <noframes></noframes>
+<?php }else{
+    echo "<div align='center' style='width:50%;height:50%;margin:20% auto;color:red;font-size:24px;'>你没有权限访问！</div>";
+    } ?>
     <body>
 
     </body>

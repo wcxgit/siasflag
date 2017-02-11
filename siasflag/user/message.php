@@ -6,6 +6,7 @@ error_reporting(0);?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>留言板</title>
 <link rel="stylesheet" type="text/css" href="css/message.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
 <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="js/message.js"></script>
 </head>
@@ -13,27 +14,19 @@ error_reporting(0);?>
 <body>
 <a name="top"></a>
 <div id="header">
-     <h1><a href="index.html"><img src="images/logo.png"></a></h1>
-	 <ul>
+     <h1><a href="index.php"><img src="images/logo.png"></a></h1>
+	 
 	       <?php 
 				if(!$_SESSION["user"]){  
-		  			 echo "<ul>
-								<li>
-									<a href='login.html'>登录</a>
-								</li>
-								|
-								<li>
-									<a href='register.html'>注册</a>
-								</li>
-							</ul>";
+		  			 echo "<ul style='margin-right: 35%;width: 364px;'><a href='index.php' style='color:red;font-size:24px;'>您没有访问权限！请登录后访问！</a></ul>";
 			  }else{
-					echo "<ul>
+					echo "<ul><ul>
 		      				<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：".$_SESSION["user"]." </a></li>
 		      				<li><a href='php/loginOut.php'>退出登录</li>
-			  			</ul>";
-			  }
+			  			</ul></ul>";
+			  
      	?>
-	 </ul>
+	 
 </div>
 <div id="nav">
         <ul>
@@ -107,26 +100,12 @@ if(!$_SESSION[user]){
        </div>
 </div>
 <div id="footer">
-           <p>电话：010-12348888　传真：010-88666666　客服电话：400-0809-560<br />
-           西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号</p>
-		   <h3><a href="#top">top</a></h3>
-		   <div class="link">
-		    <a href="#">网站首页</a>
-           <span>|</span>
-	       <a href="#">部门介绍</a>
-           <span>|</span>
-	       <a href="#">荣誉展示</a>
-           <span>|</span>
-	       <a href="#">文件列表</a>
-           <span>|</span>
-	       <a href="#">照片墙</a>
-           <span>|</span>
-	       <a href="#">在队人员</a>
-           <span>|</span>
-	       <a href="#">留言板</a>
-           <span>|</span>
-	       <a href="#">关于我们</a>
-		   </div>
+	<div class="contact">
+		电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
+		<br />
+		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+	</div>
 </div>
+<?php } ?>
 </body>
 </html>

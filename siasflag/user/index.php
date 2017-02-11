@@ -6,12 +6,12 @@ error_reporting(0);?>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-
+	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<script src="js/jquery.1.7.2.min.js"></script>
 	<script src="js/jquery.img_silder.js"></script>
 	<script src="js/index.js"></script>
 
-<title>西亚斯国旗护卫队</title>
+	<title>西亚斯国旗护卫队</title>
 
 </head>
 
@@ -19,7 +19,7 @@ error_reporting(0);?>
 	<a name="top"></a>
 	<div id="header">
 		<h1>
-			<a href="index.html">
+			<a href="index.php">
 				<img src="images/logo.png">
 			</a></h1>
 			<?php
@@ -97,135 +97,98 @@ if(!$_SESSION[user]){
 		<li>
 			<img src="images/index/banner_b.jpg">
 		</li>
-		<li>
+		<!-- <li>
 			<img src="images/index/banner_c.jpg">
-		</li>
+		</li> -->
 	</ul>
 </div>
 <div id="con">
 	<div class="left">
 		<h3>校 园 活 动 <a href="file.php" style="float: right;">更多>>></a></h3>
 		<ul id="xiaoyuan">
-					
-				</ul>
-			</div>
-			<div class="right">
-				<img src="images/index/right_pc.jpg">
-				<div class="sj">
-					<h3>队 内 纪 事<a href="file.php" style="float: right;">更多>>></h3>
-					<ul id="duinei">
-						
-					</ul>
-				</div>
-			</div>
+			
+		</ul>
+	</div>
+	<div class="right">
+		<img src="images/index/right_pc.jpg">
+		<div class="sj">
+			<h3>队 内 纪 事<a href="file.php" style="float: right;">更多>>></h3>
+			<ul id="duinei">
+				
+			</ul>
 		</div>
-		<div id="subnav">
-			<h3>友 情 链 接</h3>
-			<dl>
-				<dt>
-					<img src="images/index/link_1.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.wust.edu.cn/">
-						武汉科技大学
-					</a>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<img src="images/index/link_2.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.nkdgh.cn">
-						内蒙古科技大学国旗护卫队
-					</a>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<img src="images/index/link_3.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.jnu.edu.cn">
-						暨南大学
-					</a>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<img src="images/index/link_4.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.sdust.edu.cn">
-						山东科技大学
-					</a>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<img src="images/index/link_5.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.tsinghua.edu.cn">
-						清华大学
-					</a>
-				</dd>
-			</dl>
-			<dl>
-				<dt>
-					<img src="images/index/link_6.jpg">
-				</dt>
-				<dd>
-					<a href="http://www.hdu.edu.cn">
-						杭州电子科技大学
-					</a>
-				</dd>
-			</dl>
-		</div>
-		<div id="footer">
-			<p>
-				电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
-				<br />
-				西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
-			</p>
-			<h3>
-				<a href="#top">
-					top
-				</a></h3>
-				<div class="link">
-					<a href="#">
-						网站首页
-					</a>
-					<span>|</span>
-					<a href="#">
-						部门介绍
-					</a>
-					<span>|</span>
-					<a href="#">
-						荣誉展示
-					</a>
-					<span>|</span>
-					<a href="#">
-						文件列表
-					</a>
-					<span>|</span>
-					<a href="#">
-						照片墙
-					</a>
-					<span>|</span>
-					<a href="#">
-						在队人员
-					</a>
-					<span>|</span>
-					<a href="#">
-						留言板
-					</a>
-					<span>|</span>
-					<a href="#">
-						关于我们
-					</a>
-				</div>
-			</div>
-		</body>
+	</div>
+</div>
+<div id="subnav">
+	<h3>友 情 链 接</h3>
+	<dl>
+		<dt>
+			<img src="images/index/link_1.jpg" style="margin-bottom: 10px";>
+		</dt>
+		<dd>
+			<a href="http://www.wust.edu.cn/" style="margin-left: 18px;">
+				武汉科技大学
+			</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="images/index/link_2.jpg">
+		</dt>
+		<dd>
+			<a href="http://www.nkdgh.cn">
+				内蒙古科技大学国旗护卫队
+			</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="images/index/link_3.jpg">
+		</dt>
+		<dd>
+			<a href="http://www.jnu.edu.cn">
+				暨南大学
+			</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="images/index/link_4.jpg">
+		</dt>
+		<dd>
+			<a href="http://www.sdust.edu.cn">
+				山东科技大学
+			</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="images/index/link_5.jpg">
+		</dt>
+		<dd>
+			<a href="http://www.tsinghua.edu.cn">
+				清华大学
+			</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<img src="images/index/link_6.jpg">
+		</dt>
+		<dd>
+			<a href="http://www.hdu.edu.cn">
+				杭州电子科技大学
+			</a>
+		</dd>
+	</dl>
+</div>
+<div id="footer">
+	<div class="contact">
+		电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
+		<br />
+		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+	</div>
+</div>
+</body>
 
-		</html>
+</html>

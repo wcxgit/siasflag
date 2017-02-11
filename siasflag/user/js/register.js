@@ -11,10 +11,10 @@ $('#user').focus();
 				$('#rig_tel').html('');
 			}
 
-			function hideMail() {
+			/*function hideMail() {
 				$('#err_mail').html('');
 				$('#rig_mail').html('');
-			}
+			}*/
 
 			function hidePwd() {
 				$('#err_pwd').html('');
@@ -93,7 +93,7 @@ $('#user').focus();
 				return true;
 			}
 			//验证邮箱是否合法
-			function chkmail() {
+			/*function chkmail() {
 				var mail = $.trim($('#mail').val());
 				var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 				if(mail == '') {
@@ -111,14 +111,13 @@ $('#user').focus();
 					},
 					success:function(data){
 						if(data == "邮箱已被注册!"){
-							/*$('#err_mail').html(data);*/
 							alert(data);
 						}
 						return false;
 					}
 				});
 				return true;
-			}
+			}*/
 			//检验两次密码是否一致
 			function chkrepwd() {
 				var pwd = $('#pwd').val();
@@ -143,17 +142,21 @@ $('#user').focus();
 			function reset() {
 				$('#user').val('');
 				$('#tel').val('');
-				$('#mail').val('');
-				$('#pwd').val('');
+/*				$('#mail').val('');
+*/				$('#pwd').val('');
 				$('#repwd').val('');
 			}
 
 			//点击“立即注册”图片的时候检验各必填项是否都填写正确并获取填写项内容并输出，之后提交注册表单
 			function submit() {
-				if(chkusername() && chktel() && chkmail() && chkpwd() && chkrepwd()) {
+				/*alert(chkusername());
+				alert(chktel());
+				alert(chkpwd());
+				alert(chkrepwd());*/
+				if(chkusername() && chktel() /*&& chkmail()*/ && chkpwd() && chkrepwd()) {
 					var user = $('#user').val();
 					var tel = $('#tel').val();
-					var mail = $('#mail').val();
+					/*var mail = $('#mail').val();*/
 					var pwd = $('#pwd').val();
 					var repwd = $('#repwd').val();
 					var sex = $('input[type=radio]:checked').val();
@@ -163,7 +166,7 @@ $('#user').focus();
 						data: {
 							"username": user,
 							"tel": tel,
-							"mail": mail,
+						/*	"mail": mail,*/
 							"pwd": pwd,
 							"repwd": repwd,
 							"sex":sex
@@ -173,8 +176,8 @@ $('#user').focus();
 						},
 						complete:function(){
 							alert('注册成功,点击确定跳转到主页！');
-							/*window.location.href="index.php";
-*/
+							window.location.href="../management/html/index.php";
+
 						}
 					});
 				}else{

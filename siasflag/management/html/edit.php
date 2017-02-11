@@ -20,10 +20,13 @@
 										<tr>
 											<td rowspan="2" width="25%"><img src="../img/ico02.gif" width="35" height="35" /></td>
 											<?php 
-				       		if($_SESSION["Passed"]){
-				       			echo  "<td class='left1'>欢迎你，<span>".$_SESSION["user"]."</span></td>";
-				       		}
-				       	?>
+				       		<?php
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
+										}
+										?>
 										</tr>
 										<tr>
 											<td width="55%" height="22" class="left2">

@@ -6,6 +6,7 @@ error_reporting(0);?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/about.css">
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="js/easySlider.js"></script>
 	<script src="js/about.js"></script>
@@ -83,13 +84,16 @@ if(!$_SESSION[user]){
 			<div class="top">
 				<h3>视 频 观 看</h3>
 				<div id="slider">
-					<ul class="slides clearfix">
-						<li><a href="http://v.youku.com/v_show/id_XNzY2MDEwNDQ4.html?from=s1.8-1-1.2"><img class="responsive" src="images/shipin_01.jpg"></a></li>
-						<li><a href="http://v.youku.com/v_show/id_XMTcyNDQ0NjYxNg==.html?from=y1.2-1-103.3.1-2.1-1-1-0-0"><img class="responsive" src="images/shipin_02.jpg"></a></li>
-						<li><a href="http://v.youku.com/v_show/id_XNzA4ODgwMDI4.html?from=s1.8-1-1.2
-							"><img class="responsive" src="images/shipin_03.jpg"></a></li>
-						</ul>
-						<ul class="pagination">
+					<ul class="slides clearfix" style="margin-bottom: 36px;">
+						<li><iframe height=190 width=100% src='http://player.youku.com/embed/XNzY2MDEwNDQ4' frameborder=0 'allowfullscreen'></iframe>
+						</li>
+						<li><iframe height=190 width=100% src='http://player.youku.com/embed/XMTcyNDQ0NjYxNg==' frameborder=0 'allowfullscreen'></iframe>
+						</li>
+						<li>
+							<iframe height=190 width=100% src='http://player.youku.com/embed/XNzA4ODgwMDI4' frameborder=0 'allowfullscreen'></iframe>
+						</li>
+					</ul>
+						<ul class="pagination" >
 							<li class="active"></li>
 							<li></li>
 							<li></li>
@@ -108,26 +112,11 @@ if(!$_SESSION[user]){
 				</div>
 			</div>
 			<div id="footer">
-				<p>电话：010-12348888　传真：010-88666666　客服电话：400-0809-560<br />
-					西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号</p>
-					<h3><a href="#top">top</a></h3>
-					<div class="link">
-						<a href="#">网站首页</a>
-						<span>|</span>
-						<a href="#">部门介绍</a>
-						<span>|</span>
-						<a href="#">荣誉展示</a>
-						<span>|</span>
-						<a href="#">文件列表</a>
-						<span>|</span>
-						<a href="#">照片墙</a>
-						<span>|</span>
-						<a href="#">在队人员</a>
-						<span>|</span>
-						<a href="#">留言板</a>
-						<span>|</span>
-						<a href="#">关于我们</a>
-					</div>
-				</div>
+	<div class="contact">
+		电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
+		<br />
+		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+	</div>
+</div>
 			</body>
 			</html>

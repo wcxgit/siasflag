@@ -77,8 +77,10 @@ $.ajax({
 											<img src="../img/ico02.gif" width="35" height="35"/>
 										</td>
 										<?php
-										if ($_SESSION["Passed"]) {
-											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
 										}
 										?>
 									</tr>

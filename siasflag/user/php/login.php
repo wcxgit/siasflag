@@ -1,7 +1,7 @@
 <?php
-	error_reporting(0);
-	include("DBconnect.php");
-	session_start();
+error_reporting(0);
+include("DBconnect.php");
+session_start();
 	/*unset($_SESSION["Passed"]);
 	if(!isset($_SESSION["Passed"])){
 		$_SESSION["Passd"] = false;
@@ -30,23 +30,22 @@
 			$_SESSION['user'] = $name;
 			$_SESSION['sid'] = $sid;
 			echo "用户登录";
-		}else{
-			if($name == "super" && $pwd == "super"){
-				/*$_SESSION['admin'] = false;*/
-				$_SESSION["super"] = true;
-				$_SESSION['super'] = $name;
-				$_SESSION['sid'] = $sid;
-				echo "超级管理员";
-			}else{
-				/*$_SESSION["super"] = false;*/
-				$_SESSION['admin'] = true;
-				$_SESSION['admin'] = $name;
-				$_SESSION['sid'] = $sid;
-				echo "管理员登录";
-			}
+		}elseif($name == 'super'  && $pwd == 'super'){
+			/*$_SESSION['admin'] = false;*/
+			$_SESSION["super"] = true;
+			$_SESSION['super'] = '超级管理员';
+			$_SESSION['sid'] = $sid;
+			echo "超级管理员";
+			exit();
+		}elseif($flag == 1){
+			/*$_SESSION["super"] = false;*/
+			$_SESSION['admin'] = true;
+			$_SESSION['admin'] = $name;
+			$_SESSION['sid'] = $sid;
+			echo "管理员登录";
 		}
 		/*$_SESSION["Passed"] = true;*/
 		/*$_SESSION['user'] = $name;*/
 		/*$_SESSION['admin'] = $name;*/
-	/*}*/
-?>
+		/*}*/
+		?>

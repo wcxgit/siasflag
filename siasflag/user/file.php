@@ -6,6 +6,7 @@ error_reporting(0);?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>文件列表</title>
 	<link rel="stylesheet" type="text/css" href="css/file.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/file.js"></script>
 </head>
@@ -73,26 +74,10 @@ if(!$_SESSION[user]){
 	</div>
 </div>
 <div id="footer">
-	<p>电话：010-12348888　传真：010-88666666　客服电话：400-0809-560<br />
-		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号</p>
-		<h3><a href="#top">top</a></h3>
-		<div class="link">
-			<a href="#">网站首页</a>
-			<span>|</span>
-			<a href="#">部门介绍</a>
-			<span>|</span>
-			<a href="#">荣誉展示</a>
-			<span>|</span>
-			<a href="#">文件列表</a>
-			<span>|</span>
-			<a href="#">照片墙</a>
-			<span>|</span>
-			<a href="#">在队人员</a>
-			<span>|</span>
-			<a href="#">留言板</a>
-			<span>|</span>
-			<a href="#">关于我们</a>
-		</div>
+	<div class="contact">
+		电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
+		<br />
+		西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
 	</div>
-</body>
+</div></body>
 </html>

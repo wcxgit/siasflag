@@ -32,7 +32,7 @@
 
 					$.each(list,function(index,array){
 						
-						table+='<tr bgcolor="#FFFFFF" align="center" class="az"><td>'+array["username"]+'</td><td>'+array["time"]+'</td><td><a href="../html/alter.php">修改</a>｜<a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
+						table+='<tr bgcolor="#FFFFFF" align="center" class="az"><td>'+array["username"]+'</td><td>'+array["time"]+'</td><td><a href="javascript:;" onclick="del('+array["id"]+',this);">删除</a></td></tr>';
 					});
 					$('#list').append(table);
 				},
@@ -122,11 +122,13 @@
                             <table align="right" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td rowspan="2" width="25%"><img src="../img/ico02.gif" width="35" height="35" /></td>
-                                    <?php
-											if ($_SESSION["Passed"]) {
-												echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
-											}
-											?>
+                                   <?php
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
+										}
+										?>
                                 </tr>
                                 <tr>
                                     <td width="55%" height="22" class="left2"><a href="../php/loginout.php">[退出]</a></td>

@@ -98,9 +98,12 @@ if($id == 1){//获取所有留言信息
 			echo $message;
 		}elseif($id == 5){//回复留言
 			$num = $_GET['num'];//所回复的留言对应的id
+			$name = $_GET['name'];//留言所对应的昵称
 			$ask = $_GET['message'];
 			$time = date('Y-m-d');
-			$sql = "insert message (ask,time,flag) values ('{$ask}','{$time}',{$num})";
+			$sql = "insert message (ask,time,flag,name) values ('{$ask}','{$time}',{$num},'{$name}')";
+			echo $name;
+			echo $sql;
 			$result = mysql_query($sql);
 			if(!$result){
 				echo '回复失败：'.mysql_error();

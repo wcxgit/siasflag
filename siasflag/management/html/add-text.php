@@ -37,8 +37,10 @@ error_reporting(0);?>
 										</td>
 
 										<?php
-										if ($_SESSION["Passed"]) {
-											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
 										}
 										?>
 									</tr>
@@ -71,7 +73,7 @@ error_reporting(0);?>
 					<legend>
 						文本添加
 					</legend>
-					<tr><label>文本标题：</label><input type="text" name="title" required></tr>
+					<tr><label>文本标题：</label><input type="text" name="title" required style="margin-bottom: 20px;"></tr>
 					<br>
 					<tr>
 						<textarea id="editor_id" name="text" style="width:700px;height:300px;">

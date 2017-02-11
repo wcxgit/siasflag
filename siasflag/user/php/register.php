@@ -5,8 +5,8 @@ include("DBconnect.php");
 date_default_timezone_set("Asia/Shanghai");
 $name = $_POST["username"];
 $tel = $_POST["tel"];
-$mail = $_POST["mail"];
-$pwd = $_POST["pwd"];
+/*$mail = $_POST["mail"];
+*/$pwd = $_POST["pwd"];
 $repwd = $_POST["repwd"];
 $time = date("Y-m-d h:i:s");
 $sex = $_POST['sex'];
@@ -22,39 +22,35 @@ function chkNmae(){
 	if(!$resultName){
 		echo "用户名失败！";
 	}
-	if(mysql_fetch_array($resultName)){
-		echo mysql_fetch_array($resultName);
+	if(mysql_num_rows($resultName)>0){
 		echo '用户名已被注册!';
 		exit();
 	}
 }
 function chkTel(){
-	$sqlMail = "select mail from user where mail = '{$mail}'";
-	$resultMail = mysql_query($sqlMail);
-	if(!$resultMail){
-		echo "邮箱失败！";
-	}
-	if(mysql_fetch_array($resultTel)){
-		echo '电话号码已被注册!';
-		exit();
-	}
-}
-function chkMail(){
 	$sqlTel = "select tel from user where tel = '{$tel}'";
 	$resultTel = mysql_query($sqlTel);
 	if(!$resultTel){
 		echo "电话失败！";
-	}
-
-	elseif(mysql_fetch_array($resultMail)){
-		echo "邮箱已被注册!";
+	}elseif(mysql_num_rows($resultTel)>0){
+		echo '电话号码已被注册!';
 		exit();
 	}
 }
+/*function chkMail(){
+$sqlMail = "select mail from user where mail = '{$mail}'";
+	$resultMail = mysql_query($sqlMail);
+	if(!$resultMail){
+		echo "邮箱失败！";
+	}elseif(mysql_num_rows($resultMail)>0){
+		echo "邮箱已被注册!";
+		exit();
+	}
+}*/
 
 
 //插入数据 
-$sql = "insert into user (tel,mail,username,password,flag,creat_time,sex) values ('$tel','$mail','$name','$pwd','0','$time','$sex')";
+$sql = "insert into user (tel,username,password,flag,creat_time,sex) values ('$tel','$name','$pwd','0','$time','$sex')";
 $result = mysql_query($sql);
 if(!$result){
 	echo "注册失败：".mysql_error();

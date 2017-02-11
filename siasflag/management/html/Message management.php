@@ -35,7 +35,7 @@ error_reporting(0);?>
 					var id = json.id;
 					dataStr = '<tr><td height="22" colspan="4" align="center" class="ac">留言列表</td></tr><tr align="center" bgcolor="#EEEEEE"><td width="10%">昵称</td><td width="10%">标题</td><td width="12%">留言时间</td><td width="12%">操作</td></tr>';
 					$.each(list, function(index,array){
-						dataStr+='<tr bgcolor="#FFFFFF" align="center" class="az"><td><a href="#" onclick=""></a>'+array['name']+'</td><td class="ad">'+array['title']+'</td><td class="ad">'+array['time']+'</td> <td class="ad"><a href="javascript:;" onclick="del('+array['id']+',this)">删除</a>|<a href="Reply content.php?id='+array['id']+'">回复</a>|<a href="javascript:;" onclick="detail('+array['id']+');">详细</a></td></tr>';
+						dataStr+='<tr bgcolor="#FFFFFF" align="center" ><td class="ab"><a href="#" onclick=""></a>'+array['name']+'</td><td class="ab">'+array['title']+'</td><td class="ab">'+array['time']+'</td> <td class="ab"><a href="javascript:;" onclick="del('+array['id']+',this)">删除</a>|<a href="Reply content.php?id='+array['id']+'&name='+array['name']+'">回复</a>|<a href="javascript:;" onclick="detail('+array['id']+');">详细</a></td></tr>';
 					});
 					$('#list').append(dataStr);
 					
@@ -64,7 +64,7 @@ error_reporting(0);?>
 					pageBar+='<tr><td width="50%" class="dd">共 <span>'+totalPage+'</span> 页 | 第 <span>'+curPage+'</span> 页</td>';
 					//当前页为首页
 					if(curPage == 1){
-						pageBar +='<td width="49%" align="right" class="ee">[<span>首页</span> | <span>上一页</span> ';
+						pageBar +='<td width="44%" align="right" class="ee">[<span>首页</span> | <span>上一页</span> ';
 					}else{
 						pageBar+='<td width="49%" align="right" class="ee">[<a href="javascript:;" onclick="jump(1);">首页</a> | <a href="javascript:;" onclick="jump('+(curPage-1)+');">上一页</a> ';
 					}
@@ -174,7 +174,7 @@ error_reporting(0);?>
 						pageBar+='| <a href="javascript:;" onclick="jumpS('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jumpS('+totalPage+')">末页</a>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
 					}
 					
-					pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc"  onclick="turnPageS()"/></td></tr></table></td><td></td><td></td></tr>';
+					/*pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc"  onclick="turnPageS()"/></td></tr></table></td><td></td><td></td></tr>';*/
 
 					$('#pageBar').html(pageBar);
 				}
@@ -223,14 +223,16 @@ error_reporting(0);?>
 							<table  width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
 									<td height="62">
-										<table align="right" border="0" cellspacing="0" cellpadding="0">
+										<table style="width:196px; "  align="right" border="0" cellspacing="0" cellpadding="0">
 											<tr>
 												<td rowspan="2" width="25%"><img src="../img/ico02.gif" width="35" height="35" /></td>
 												<?php
-												if ($_SESSION["Passed"]) {
-													echo "<td class='left1'>欢迎你，<span>" . $_SESSION["user"] . "</span></td>";
-												}
-												?>
+										if ($_SESSION["admin"]) {
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["admin"] . "</span></td>";
+										}elseif($_SESSION['super']){
+											echo "<td class='left1'>欢迎你，<span>" . $_SESSION["super"] . "</span></td>";
+										}
+										?>
 											</tr>
 											<tr>
 												<td width="55%" height="22" class="left2">	<a href="../php/loginout.php">[退出]</a></td>

@@ -4,16 +4,15 @@
 	padding:0;
 }
 body{
-	margin:0 auto;
-	width:1366px;
-	background:url(../images/register.jpg);
-	font-size:12px;
+	margin: 0 auto;
+	width: 1366px;
+	background: url(../images/register.jpg) center no-repeat;
+	font-size: 12px;
+	background-color: #9cd2ec;
 }
 #header{
 	width:380px;
-	height:290px;
-	margin:226px 300px 0px 510px;
-	padding-top:10px;
+	margin: 230px auto;
 }
 .STYLE1 {
 	font-size: 16px;
