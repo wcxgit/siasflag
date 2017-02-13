@@ -230,6 +230,13 @@ error_reporting(0); ?>
 											<td width="91%"><a href="add-text.php" target="mainFrame" class="left3" onClick="tupian('19');">文档编辑</a></td>
 
 										</tr>
+										<tr>
+
+											<td width="9%" height="20"><img id="xiaotu24" src="../img/ico06.gif" width="8" height="12" /></td>
+
+											<td width="91%"><a href="add-text.php" target="mainFrame" class="left3" onClick="tupian('24');">申请表</a></td>
+
+										</tr>
 										<!-- <tr>
 
 											<td width="9%" height="20"><img id="xiaotu20" src="../img/ico06.gif" width="8" height="12" /></td>

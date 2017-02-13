@@ -5,32 +5,40 @@ include 'DBconnect.php';
 $id = $_GET['id'];
 //获取校园活动
 if($id==1){
-	$sql = "select * from file where flag=1";
+	$sql = "select * from file where flag=1 order by time desc limit 0,14";
 	$xiaoyuan = mysql_query($sql,$con);
 	if(!$xiaoyuan){
 		echo '查询出错：'.mysql_error();
 	}
+	$arr['list'] = '';
+	
 	while($row = mysql_fetch_array($xiaoyuan)){
-		echo '<li>
-		<a href="'.$row['url'].'">'
-			.$row['title'].
-			'</a><span>'.$row['time'].'</span>
-		</li>';
-	}
-}elseif($id == 2){
-	$sql2= "select * from file where flag = 2";
+		/*echo '<li><a href="'.$row['url'].'">'.$row['title'].'</a><span>'.$row['time'].'</span>/li>';*/
+		$arr['list'][] = array(
+			'url'=>$row['url'],
+			'title'=>$row['title'],
+			'time'=>$row['time']
+		);
+	}	
+	echo json_encode($arr);
+}elseif($id == 2){//获取队内纪事
+	$sql2= "select * from file where flag = 2 order by time desc limit 0,6";
 	$duinei = mysql_query($sql2,$con);
 	if(!$duinei){
 		echo "查询出错：".mysql_error();
 	}
+	$arr['list'] = '';
 	while($row=mysql_fetch_array($duinei)){
-		echo '<li>
-		<a href="'.$row['url'].'">
-			'.$row['title'].'
-		</a>
-	</li>';
+		$arr['list'][] = array(
+			'url'=>$row['url'],
+			'title'=>$row['title'],
+			'time'=>$row['time']
+		);
+		
+		
 }
-}elseif($id == 3){
+	echo json_encode($arr);
+}elseif($id == 3){//分页获取全部内容
 	$page = $_GET['pageNum'];//起始页
 
 	//获取数据总数
@@ -60,7 +68,7 @@ if($id==1){
 			);
 	}
 	echo json_encode($arr);
-}elseif($id==4){
+}elseif($id==4){//点击链接获取file detail内容
 	$title = $_GET['listTitle'];//点击文件的标题
 	$time = $_GET['listTime'];//点击文件的创建时间
 	$sql = "select text from file where title='{$title}'&&time='{$time}'";
@@ -91,7 +99,7 @@ if($id==1){
 			'weibo'=>$row['weibo'],
 			'wechat'=>$row['wechat']
 			);
-	};
+	}
 	
 	echo json_encode($arr);
 }elseif($id == 6){//获取视频内容
@@ -126,6 +134,24 @@ if($id==1){
 	}
 	echo json_encode($arr);
 
+}elseif($id == 7){
+	$sql = "select * from file where flag = 3";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo "查询出错：".mysql_error();
+		exit();
+	}
+	$row = mysql_fetch_array($result);
+	echo $row['text'];
+}elseif($id == 8){
+	$sql = "select * from file where flag = 3";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo "查询失败：".mysql_error();
+		exit();
+	}
+	$row = mysql_fetch_array($result);
+	echo $row['text'];
 }
 
 

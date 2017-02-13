@@ -10,7 +10,7 @@ function submit(){
 					},
 					success:function(data){
 						if(data == "用户登录"){
-							window.location.href="index.php";
+							window.location.href="../index.php";
 						}else if(data == "管理员登录" || data == "超级管理员"){
 							window.location.href="../management/html/index.php";
 						}else{

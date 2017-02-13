@@ -5,11 +5,11 @@ error_reporting(0);?>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<script src="js/jquery.1.7.2.min.js"></script>
-	<script src="js/jquery.img_silder.js"></script>
-	<script src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="user/css/index.css">
+	<link rel="stylesheet" type="text/css" href="user/css/common.css">
+	<script src="user/js/jquery.1.7.2.min.js"></script>
+	<script src="user/js/jquery.img_silder.js"></script>
+	<script src="user/js/index.js"></script>
 
 	<title>西亚斯国旗护卫队</title>
 
@@ -20,24 +20,24 @@ error_reporting(0);?>
 	<div id="header">
 		<h1>
 			<a href="index.php">
-				<img src="images/logo.png">
+				<img src="user/images/logo.png">
 			</a></h1>
 			<?php
 			if (!$_SESSION['user']) {
 				echo "<ul>
 				<li>
-					<a href='login.html'>登录</a>
+					<a href='user/login.html'>登录</a>
 				</li>
 				|
 				<li>
-					<a href='register.html'>注册</a>
+					<a href='user/register.html'>注册</a>
 				</li>
 			</ul>";
 		} else {
 			$id = $_SESSION['user'];
 			echo "<ul>
 			<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
-			<li><a href='php/loginOut.php'>退出登录</li>
+			<li><a href='user/php/loginOut.php'>退出登录</li>
 		</ul>";
 	}
 	?>
@@ -50,22 +50,22 @@ error_reporting(0);?>
 			</a>
 		</li>
 		<li>
-			<a href="about.php">
+			<a href="user/about.php">
 				部门介绍
 			</a>
 		</li>
 		<li>
-			<a href="depShow.php">
+			<a href="user/depShow.php">
 				荣誉展示
 			</a>
 		</li>
 		<li>
-			<a href="file.php">
+			<a href="user/file.php">
 				文件列表
 			</a>
 		</li>
 		<li>
-			<a href="picture.php">
+			<a href="user/picture.php">
 				照片墙
 			</a>
 		</li>
@@ -92,11 +92,9 @@ if(!$_SESSION[user]){
 <div class="silder" id="silder">
 	<ul class="silder_list" id="silder_list">
 		<li>
-			<img src="images/index/banner_a.jpg">
-		</li>
+			<img src="user/images/index/banner_a.jpg">		</li>
 		<li>
-			<img src="images/index/banner_b.jpg">
-		</li>
+			<img src="user/images/index/banner_b.jpg">		</li>
 		<!-- <li>
 			<img src="images/index/banner_c.jpg">
 		</li> -->
@@ -104,15 +102,15 @@ if(!$_SESSION[user]){
 </div>
 <div id="con">
 	<div class="left">
-		<h3>校 园 活 动 <a href="file.php" style="float: right;">更多>>></a></h3>
+		<h3>校 园 活 动 <a href="user/file.php" style="float: right;">更多>>></a></h3>
 		<ul id="xiaoyuan">
 			
 		</ul>
 	</div>
 	<div class="right">
-		<img src="images/index/right_pc.jpg">
+		<img src="user/images/index/right_pc.jpg">
 		<div class="sj">
-			<h3>队 内 纪 事<a href="file.php" style="float: right;">更多>>></h3>
+			<h3>队 内 纪 事<a href="user/file.php" style="float: right;">更多>>></h3>
 			<ul id="duinei">
 				
 			</ul>
@@ -123,7 +121,7 @@ if(!$_SESSION[user]){
 	<h3>友 情 链 接</h3>
 	<dl>
 		<dt>
-			<img src="images/index/link_1.jpg" style="margin-bottom: 10px";>
+			<img src="user/images/index/link_1.jpg" style="margin-bottom: 10px";>
 		</dt>
 		<dd>
 			<a href="http://www.wust.edu.cn/" style="margin-left: 18px;">
@@ -133,7 +131,7 @@ if(!$_SESSION[user]){
 	</dl>
 	<dl>
 		<dt>
-			<img src="images/index/link_2.jpg">
+			<img src="user/images/index/link_2.jpg">
 		</dt>
 		<dd>
 			<a href="http://www.nkdgh.cn">
@@ -143,7 +141,7 @@ if(!$_SESSION[user]){
 	</dl>
 	<dl>
 		<dt>
-			<img src="images/index/link_3.jpg">
+			<img src="user/images/index/link_3.jpg">
 		</dt>
 		<dd>
 			<a href="http://www.jnu.edu.cn">
@@ -153,7 +151,7 @@ if(!$_SESSION[user]){
 	</dl>
 	<dl>
 		<dt>
-			<img src="images/index/link_4.jpg">
+			<img src="user/images/index/link_4.jpg">
 		</dt>
 		<dd>
 			<a href="http://www.sdust.edu.cn">
@@ -163,7 +161,7 @@ if(!$_SESSION[user]){
 	</dl>
 	<dl>
 		<dt>
-			<img src="images/index/link_5.jpg">
+			<img src="user/images/index/link_5.jpg">
 		</dt>
 		<dd>
 			<a href="http://www.tsinghua.edu.cn">
@@ -173,7 +171,7 @@ if(!$_SESSION[user]){
 	</dl>
 	<dl>
 		<dt>
-			<img src="images/index/link_6.jpg">
+			<img src="user/images/index/link_6.jpg">
 		</dt>
 		<dd>
 			<a href="http://www.hdu.edu.cn">

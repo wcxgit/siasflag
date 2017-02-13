@@ -59,7 +59,7 @@ error_reporting(0);?>
 </div>
 <div id="nav">
         <ul>
-	       <li><a href="index.php">网站首页</a></li>
+	       <li><a href="../index.php">网站首页</a></li>
            <li><a href="about.php">部门介绍</a></li>
            <li><a href="depShow.php">荣誉展示</a></li>
            <li><a href="file.php">文件列表</a></li>

@@ -4,7 +4,7 @@ error_reporting(0);?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>视频专区</title>
+	<title>荣誉展示</title>
 	<link rel="stylesheet" type="text/css" href="css/file.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<script src="js/jquery-2.1.1.min.js"></script>
@@ -38,7 +38,7 @@ error_reporting(0);?>
 </div>
 <div id="nav">
 	<ul>
-		<li><a href="index.php">网站首页</a></li>
+		<li><a href="../index.php">网站首页</a></li>
 		<li><a href="about.php">部门介绍</a></li>
 		<li><a href="depShow.php">荣誉展示</a></li>
 		<li><a href="file.php">文件列表</a></li>
