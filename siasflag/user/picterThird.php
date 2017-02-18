@@ -24,19 +24,19 @@
 				<?php
 				if (!$_SESSION["user"]) {
 					echo "<ul>
-<li>
-<a href='login.html'>登录</a>
-</li>
-|
-<li>
-<a href='register.html'>注册</a>
-</li>
-</ul>";
+				<li>
+				<a href='login.html'>登录</a>
+				</li>
+				|
+				<li>
+				<a href='register.html'>注册</a>
+				</li>
+				</ul>";
 				} else {
 					echo "<ul>
-<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
-<li><a href='php/loginOut.php'>退出登录</li>
-</ul>";
+				<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
+				<li><a href='php/loginOut.php'>退出登录</li>
+				</ul>";
 				}
 				?>
 			</ul>
@@ -71,12 +71,12 @@
 				<?php
 				if ($_SESSION['on-off']) {
 					echo '<li>
-<a href="come.php">加入我们</a>
-</li>';
+				<a href="come.php">加入我们</a>
+				</li>';
 				} else {
 					echo '<li>
-<a href="javascript:;" onclick="msg();">加入我们</a>
-</li>';
+				<a href="javascript:;" onclick="msg();">加入我们</a>
+				</li>';
 				}
 				?>
 				<?php
@@ -109,14 +109,19 @@
 			<div class="right">
 				<div class="list">
 					<ul>
+						<li>
+							<a href="picture.php">
+								<?php echo date('Y') - 3; ?>级
+							</a>
+						</li>
+						<li>
+							<a href="picterSecond.php">
+								<?php echo date('Y') - 2; ?>级
+							</a>
+						</li>
 						<li class="bg">
-							<a href="picture.php" class="active"><?php echo date('Y') - 3; ?>级</a>
-						</li>
-						<li>
-							<a href="picterSecond.php"><?php echo date('Y') - 2; ?>级</a>
-						</li>
-						<li>
-							<a href="picterThird.php"><?php echo date('Y')-1; ?>级</a>
+							<a href="picterThird.php" class="active"><?php echo date('Y')-1; ?>级
+							</a>
 						</li>
 					</ul>
 				</div>

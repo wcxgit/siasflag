@@ -1,4 +1,3 @@
-<!-- 留言信息回复 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();
 	error_reporting(0);
@@ -6,12 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>联系我们</title>
-		<link rel="stylesheet" type="text/css" href="css/reply.css">
+		<title>照片墙</title>
+		<link rel="stylesheet" type="text/css" href="css/inTeam.css">
 		<link rel="stylesheet" type="text/css" href="css/cell.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<script type="text/javascript">function msg() {
 	alert('暂未开放此功能！');
+}
+
+function log() {
+	alert('请先登录！');
 }</script>
 	</head>
 
@@ -26,19 +29,19 @@
 				<?php
 				if (!$_SESSION["user"]) {
 					echo "<ul>
-<li>
-<a href='login.html'>登录</a>
-</li>
-|
-<li>
-<a href='register.html'>注册</a>
-</li>
-</ul>";
+				<li>
+				<a href='login.html'>登录</a>
+				</li>
+				|
+				<li>
+				<a href='register.html'>注册</a>
+				</li>
+				</ul>";
 				} else {
 					echo "<ul>
-<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
-<li><a href='php/loginOut.php'>退出登录</li>
-</ul>";
+				<li><a href='javascript:;' style='color:#048ac7;'>欢迎你：" . $_SESSION["user"] . " </a></li>
+				<li><a href='php/loginOut.php'>退出登录</li>
+				</ul>";
 				}
 				?>
 			</ul>
@@ -73,17 +76,17 @@
 				<?php
 				if ($_SESSION['on-off']) {
 					echo '<li>
-<a href="come.php">加入我们</a>
-</li>';
+				<a href="come.php">加入我们</a>
+				</li>';
 				} else {
 					echo '<li>
-<a href="javascript:;" onclick="msg();">加入我们</a>
-</li>';
+				<a href="javascript:;" onclick="msg();">加入我们</a>
+				</li>';
 				}
 				?>
 				<?php
 				if (!$_SESSION[user]) {
-					echo '<li><a href="javascript:;">留言板</a></li>';
+					echo '<li><a href="javascript:;" onclick="log();">留言板</a></li>';
 				} else {
 					echo '<li><a href="message.php">留言板</a></li>';
 				}
@@ -96,29 +99,39 @@
 				<img src="images/message/message_3.png">
 				<div class="line">
 					<p>
-						<a href="message.php">
-							在线留言 >>
+						<a href="inTeam.php">
+							在队人员 >>
 						</a>
 					</p>
 					<p>
-						<a href="contact.php">
-							联系我们 >>
-						</a>
-					</p>
-					<p>
-						<a href="javascript:;">
-							留言回复 >>
+						<a href="picture.php">
+							照片墙 >>
 						</a>
 					</p>
 				</div>
 			</div>
+			<div class="centre"></div>
 			<div class="right">
+				<div class="list">
+					<ul>
+						<li>
+							<a href="inTeam.php">
+								<?php echo date('Y') - 2; ?>级
+							</a>
+						</li>
+						<li class="bg">
+							<a href="inTeamSecond.php">
+								<?php echo date('Y') - 1; ?>级
+							</a>
+						</li>
+						<li>
+							<a href="inTeamThird.php">
+								<?php echo date('Y'); ?>级
+							</a>
+						</li>
+					</ul>
+				</div>
 				<form>
-					<p>
-						按内容标题搜索留言：
-						<input type="text">
-						<input type="button" value="搜索">
-					</p>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
@@ -131,23 +144,20 @@
 														<br>
 														<table  width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#cfcece" align="center">
 															<tr>
-																<td height="26" align="center" colspan="5" class="ac">回复列表</td>
+																<td height="26" align="center" colspan="5" class="ac"><?php echo date("Y") - 1; ?>级
+																	在队人员列表</td>
 															</tr>
 															<tr align="center" bgcolor="#f3f2f2">
-																<td width="10%">昵称</td>
-																<td width="15%">内容</td>
-																<td width="12%">留言时间</td>
-																<td width="12%">操作</td>
+																<td width="10%">姓名</td>
+																
+																<td width="12%">性别</td>
 															</tr>
 															<tr bgcolor="#FFFFFF" align="center" class="az">
 																<td>
 																	<a href="#" onclick=""></a>明明</td>
-																<td>xxxx</td>
-																<td class="ad">2016-12-01</td>
-																<td class="ad">
-																	<a href="Reply content.html">
-																		查看详情
-																	</a></td>
+																
+																<td class="ad">男</td>
+																
 															</tr>
 
 														</table></td>
@@ -195,8 +205,9 @@
 						</tr>
 					</table>
 				</form>
-
 			</div>
+
+		</div>
 		</div>
 		<div id="footer">
 			<div class="contact">

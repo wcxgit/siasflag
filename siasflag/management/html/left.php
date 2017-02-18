@@ -1,115 +1,99 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();
-error_reporting(0); ?>
+	error_reporting(0);
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
+	<head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title>无标题文档</title>
+		<title>无标题文档</title>
 
-	<link href="../css/left.css" rel="stylesheet" type="text/css" />
+		<link href="../css/left.css" rel="stylesheet" type="text/css" />
 
-</head>
+	</head>
 
-<SCRIPT language=JavaScript>
+	<SCRIPT language=JavaScript>function tupian(idt) {
 
-	function tupian(idt){
+	var nametu = "xiaotu" + idt;
 
-		var nametu="xiaotu"+idt;
+	var tp = document.getElementById(nametu);
 
-		var tp = document.getElementById(nametu);
+	tp.src = "../img/ico05.gif";
 
-		tp.src="../img/ico05.gif";
+	for(var i = 1; i < 30; i++)
 
+	{
 
+		var nametu2 = "xiaotu" + i;
 
-		for(var i=1;i<30;i++)
+		if(i != idt * 1)
 
 		{
 
+			var tp2 = document.getElementById('xiaotu' + i);
 
+			if(tp2 != undefined)
 
-			var nametu2="xiaotu"+i;
-
-			if(i!=idt*1)
-
-			{
-
-				var tp2=document.getElementById('xiaotu'+i);
-
-				if(tp2!=undefined)
-
-					{tp2.src="../img/ico06.gif";}
-
-			}
+			{ tp2.src = "../img/ico06.gif"; }
 
 		}
-
-	}
-
-
-
-	function list(idstr){
-
-		var name1="subtree"+idstr;
-
-		var name2="img"+idstr;
-
-		var objectobj=document.all(name1);
-
-		var imgobj=document.all(name2);
-
-		if(objectobj.style.display=="none"){
-
-			for(i=1;i<10;i++){
-
-				var name3="img"+i;
-
-				var name="subtree"+i;
-
-				var o=document.all(name);
-
-				if(o!=undefined){
-
-					o.style.display="none";
-
-					var image=document.all(name3);
-
-				//alert(image);
-
-				image.src="../img/ico04.gif";
-
-			}
-
-		}
-
-		objectobj.style.display="";
-
-		imgobj.src="../img/ico03.gif";
-
-	}
-
-	else{
-
-		objectobj.style.display="none";
-
-		imgobj.src="../img/ico04.gif";
 
 	}
 
 }
 
+function list(idstr) {
 
+	var name1 = "subtree" + idstr;
 
-</SCRIPT>
+	var name2 = "img" + idstr;
 
+	var objectobj = document.all(name1);
 
+	var imgobj = document.all(name2);
 
-<body>
-	<?php
+	if(objectobj.style.display == "none") {
+
+		for(i = 1; i < 10; i++) {
+
+			var name3 = "img" + i;
+
+			var name = "subtree" + i;
+
+			var o = document.all(name);
+
+			if(o != undefined) {
+
+				o.style.display = "none";
+
+				var image = document.all(name3);
+
+				//alert(image);
+
+				image.src = "../img/ico04.gif";
+
+			}
+
+		}
+
+		objectobj.style.display = "";
+
+		imgobj.src = "../img/ico03.gif";
+
+	} else {
+
+		objectobj.style.display = "none";
+
+		imgobj.src = "../img/ico04.gif";
+
+	}
+
+}</SCRIPT>
+
+	<body>
+		<?php
 	if($_SESSION["super"]){
 		?>
 
@@ -234,7 +218,7 @@ error_reporting(0); ?>
 
 											<td width="9%" height="20"><img id="xiaotu24" src="../img/ico06.gif" width="8" height="12" /></td>
 
-											<td width="91%"><a href="add-text.php" target="mainFrame" class="left3" onClick="tupian('24');">申请表</a></td>
+											<td width="91%"><a href="view content.php" target="mainFrame" class="left3" onClick="tupian('24');">申请表</a></td>
 
 										</tr>
 										<!-- <tr>
@@ -398,12 +382,12 @@ error_reporting(0); ?>
 			</tr>
 
 		</table>
-
 	</td>
 
 </tr>
 
 </table>
+
 <?php
 }else{
 	?>
@@ -517,7 +501,13 @@ error_reporting(0); ?>
 										<td width="91%"><a href="add-text.php" target="mainFrame" class="left3" onClick="tupian('19');">文档编辑</a></td>
 
 									</tr>
+		<tr>
 
+											<td width="9%" height="20"><img id="xiaotu24" src="../img/ico06.gif" width="8" height="12" /></td>
+
+											<td width="91%"><a href="view content.php" target="mainFrame" class="left3" onClick="tupian('24');">申请表</a></td>
+
+										</tr>
 								</table>
 
 
@@ -659,6 +649,7 @@ error_reporting(0); ?>
 			</tr>
 
 		</table>
+		
 
 		<table id="subtree3" style="DISPLAY: none" width="80%" border="0" align="right" cellpadding="0" cellspacing="0" class="left-table2">
 
@@ -671,7 +662,30 @@ error_reporting(0); ?>
 			</tr>
 
 		</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="left-table1">
 
+				<tr>
+
+					<td height="29">
+
+						
+
+					</td>
+
+				</tr>
+
+			</table>
+			<table id="subtree2" style="DISPLAY: none" width="80%" border="0" align="right" cellpadding="0" cellspacing="0" class="left-table2">
+
+				<tr>
+
+					<td width="9%" height="20"><img id="xiaotu2" src="../img/ico06.gif" width="8" height="12" /></td>
+
+					<td width="91%" class="left3" ><a href="view content.php" target="mainFrame" onClick="tupian('2');">查看提交内容</a></td>
+
+				</tr>
+
+			</table>
 	</td>
 
 </tr>
@@ -680,9 +694,7 @@ error_reporting(0); ?>
 <?php
 }
 ?>
-
-
-</body>
+	</body>
 
 </html>
 

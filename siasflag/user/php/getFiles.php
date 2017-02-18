@@ -152,6 +152,35 @@ if($id==1){
 	}
 	$row = mysql_fetch_array($result);
 	echo $row['text'];
+}elseif($id == 9){//获取照片墙数据
+	$page = $_GET['pageNum'];//起始页
+	$rank = $_GET['rank'];//级别
+	//获取数据总数
+	$sqlTotal = "select * from team where rank = {$rank}";
+
+	$total = mysql_num_rows(mysql_query($sqlTotal));
+
+	$pageSize = 6;//每页显示条数
+	$pageStart = ($page-1)*$pageSize;//页起始位置
+	$totalPage = ceil($total/$pageSize);//总页数
+
+	//封装数据
+	$arr['total'] = $total;
+	$arr['pageSize'] = $pageSize;
+	$arr['totalPage'] = $totalPage;
+	//查询分页
+	$sql = "select * from team where rank = {$rank} order by name desc limit {$pageStart},{$pageSize}";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo '查询失败：'.mysql_error();
+	}
+	while($row = mysql_fetch_array($result)){
+		$arr['list'][] = array(
+			'photo'=>$row['photo'],
+			'name'=>$row['name']
+			);
+	}
+	echo json_encode($arr);
 }
 
 

@@ -72,7 +72,7 @@ error_reporting(0);?>
 		<?php
 		if ($_SESSION['on-off']) {
 			echo '<li>
-			<a href="come.php">加入我们</a>
+			<a href="user/come.php">加入我们</a>
 		</li>';
 	}else{
 		echo '<li>
@@ -84,7 +84,7 @@ error_reporting(0);?>
 if(!$_SESSION[user]){
 	echo '<li><a href="javascript:;" onclick="log();">留言板</a></li>';
 }else{
-	echo  '<li><a href="message.php">留言板</a></li>';
+	echo  '<li><a href="user/message.php">留言板</a></li>';
 }
 ?>
 </ul>

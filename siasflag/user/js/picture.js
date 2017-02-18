@@ -1,40 +1,35 @@
 var curPage = 1;
 var total, pageSize, totalPage;
-//获取分页数据
-function getDate(page) {
+var rank = "";
+var value = "";
+function getDate(page,rank){
 	$.ajax({
 		type: 'get',
-		url: 'php/getFiles.php?id=3&r=' + Math.random() + '&pageNum=' + page,
+		url: 'php/getFiles.php?id=9&r=' + Math.random() + '&pageNum=' + page+'&rank='+rank,
+		async: true,
 		success: function(data) {
 			var json = JSON.parse(data);
-			$('#files').empty(); //清空内容区
+			$('.yq').empty();
+			var list = json.list;
 			total = json.total; //总记录数
 			pageSize = json.pageSize; //每页显示条数
 			curPage = page; //当前页
 			totalPage = json.totalPage; //总页数
 			var li = ""; //用于存储查询出的数据
-			var list = json.list;
-
-			$.each(list, function(index, array) { //遍历数据
-				if(array['url'] == 'user/file detail.php') {
-					li += "<li><a href='javascript:;' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>" + array['title'] + "</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>" + array['time'] + "</span></span></a></li>";
-				} else {
-					li += "<li><a href='" + array['url'] + "' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>" + array['title'] + "</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>" + array['time'] + "</span></span></a></li>";
-				}
+			
+			$.each(list, function(index,array) {
+				li += '<div class="cell_1"><a href="'+array["photo"]+'"><img src="'+array["photo"]+'" width="200" ></a><p><span>姓名:</span>'+array["name"]+'</p></div>';
 			});
-			/*			onclick="getTitleTime('"+array['title']+"');"
-			 */
-			$('#files').append(li);
+			$('.yq').append(li);
 		},
 		complete: function() { //数据加载完成后生成分页条
 			getPageBar();
 		},
-		error: function(data) {
-			alert(data.status);
+		error: function(msg) {
+			alert(msg.status);
 		}
 	});
 }
-
 //获取分页条
 function getPageBar() {
 	var pageStr = ""; //存储页码条
@@ -64,21 +59,18 @@ function getPageBar() {
 }
 
 $(function() {
-	getDate(1); //起始第一页
+	value = $('.active').text();
+	rank = value.substr(0, 4);
+	getDate(1,rank); //起始第一页
 });
 
 function jump(ref) {
+	value =$('.active').text();
+	rank = value.substr(0, 4);
 	if(ref) {
-		getDate(ref);
+		getDate(ref,rank);
 	}
 }
-
-//获取链接的标题和时间
-function getTitleTime(listTitle, listTime) {
-	location.href = 'file detail.php?listTitle=' + listTitle + '&listTime=' + listTime;
-	
-}
-
 function msg() {
 	alert('暂未开放此功能！');
 }
