@@ -85,26 +85,7 @@ $(function() {
 	getData(1, rank);
 });
 
-/*点击删除*/
-/*function del(id, t) {
-	var flag = confirm('确定要删除此数据？');
-	if(flag) {
-		$.ajax({
-			type: 'GET',
-			url: '../php/deleteTable.php?id=' + id,
-			success: function(data) {
-				alert(data);
-			},
-			error: function(msg) {
-				alert(msg.status);
-			},
-			complete: function() {
-				$(t).parent().parent().empty();
-			}
-		});
-	}
 
-}*/
 
 function msg() {
 	alert('暂未开放此功能！');

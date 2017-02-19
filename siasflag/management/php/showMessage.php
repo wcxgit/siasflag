@@ -104,8 +104,6 @@ if ($id == 1) {//获取所有留言信息
 	$ask = $_GET['message'];
 	$time = date('Y-m-d');
 	$sql = "insert message (ask,time,flag,name) values ('{$ask}','{$time}',{$num},'{$name}')";
-	echo $name;
-	echo $sql;
 	$result = mysql_query($sql);
 	if (!$result) {
 		echo '回复失败：' . mysql_error();
@@ -220,6 +218,71 @@ if ($id == 1) {//获取所有留言信息
 		);
 	}
 	echo json_encode($arr);
+}elseif($id == 11){//普通用户查看留言回复
+	$curPage = $_GET['page'];
+	//当前页数
+	$pageSize = 15;
+	//每页显示条数
+	$name = $_GET['name'];
+	$sql = "select * from message where name='{$name}' && flag is null";
+	$result = mysql_query($sql);
+	if (!$result) {
+		echo "查询失败：" . mysql_error();
+	}
+	/*获取记录总数*/
+	$total = mysql_num_rows($result);
+	//记录总数
+	$totalPage = ceil($total / $pageSize);
+	//总页数
+	$startPage = ($curPage - 1) * 15;
+	//分页查询起始页
+	/*分页查询*/
+	$pageSql = "select * from message where name = '{$name}' && flag is null order by time desc limit {$startPage},{$pageSize}";
+	$pageResult = mysql_query($pageSql);
+	if (!$pageResult) {
+		echo '分页查询失败：' . mysql_error();
+		exit();
+	}
+	/*封装信息*/
+	$arr['curPage'] = $curPage;
+	$arr['totalPage'] = $totalPage;
+	$arr['list'] = "";
+	while ($row = mysql_fetch_array($pageResult)) {
+		$arr['list'][] = array(
+		'name' => $row['name'],
+		'message'=>$row['message'],
+		'id' => $row['id'],
+		'time'=>$row['time'],
+		
+		);
+	}
+	if ($arr['list'] == "") {
+		$arr['msg'] = '无留言！';
+		echo json_encode($arr);
+	} else {
+		echo json_encode($arr);
+	}
+}elseif($id == 12){//普通用户查看留言回复的详细信息
+	$num = $_GET['num'];
+	$sql = "select ask from message where flag = {$num}";
+	$result = mysql_query($sql);
+	if(!$result){
+		echo "查询失败：".mysql_error();
+		exit();
+	}
+	$arr['list'] = '';
+	while($row = mysql_fetch_array($result)){
+		$arr['list'][] = array(
+			'ask'=>$row['ask']
+		);
+	}
+	if($arr['list'] == ''){
+		$arr['msg'] = '无回复内容！';
+		echo json_encode($arr);
+	}else{
+		echo json_encode($arr);
+	}
+	
 }
 ?>
 

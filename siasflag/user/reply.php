@@ -10,12 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="css/reply.css">
 		<link rel="stylesheet" type="text/css" href="css/cell.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
-		<script type="text/javascript">function msg() {
-	alert('暂未开放此功能！');
-}</script>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/reply.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
+		<input id="name" type="text" value="<?php echo $_SESSION['user'];?>" hidden/>
 		<a name="top"></a>
 		<div id="header">
 			<h1>
@@ -114,11 +114,11 @@
 			</div>
 			<div class="right">
 				<form>
-					<p>
+					<!--<p>
 						按内容标题搜索留言：
 						<input type="text">
 						<input type="button" value="搜索">
-					</p>
+					</p>-->
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
@@ -139,7 +139,10 @@
 																<td width="12%">留言时间</td>
 																<td width="12%">操作</td>
 															</tr>
-															<tr bgcolor="#FFFFFF" align="center" class="az">
+															<tbody id="list">
+																
+															</tbody>
+															<!--<tr bgcolor="#FFFFFF" align="center" class="az">
 																<td>
 																	<a href="#" onclick=""></a>明明</td>
 																<td>xxxx</td>
@@ -149,7 +152,7 @@
 																		查看详情
 																	</a></td>
 															</tr>
-
+-->
 														</table></td>
 												</tr>
 											</table>
@@ -161,8 +164,8 @@
 												</tr>
 												<tr>
 													<td height="33">
-														<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-															<tr>
+														<table id="pageBar" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+															<!--<tr>
 																<td width="50%" class="dd">共
 																	<a href="#">
 																		5
@@ -186,7 +189,7 @@
 
 																<td></td>
 																<td></td>
-															</tr>
+															</tr>-->
 														</table></td>
 												</tr>
 											</table></td>

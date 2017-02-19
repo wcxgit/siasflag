@@ -206,7 +206,7 @@ h1{
 #con span{
   width:80px;
   line-height:30px;
-  float:left;
+  /*float:left;*/
 }
 
 #con .btn {
