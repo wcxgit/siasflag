@@ -32,7 +32,8 @@ $rank = $_POST['rank'];
 		$arr['list'][] = array(
 			'username'=>$row['name'],
 			'time'=>$row['create_time'],
-			'id'=>$row['id']
+			'id'=>$row['id'],
+			'img'=>$row['photo']
 			);
 	}
 	echo json_encode($arr);

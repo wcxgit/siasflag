@@ -6,16 +6,11 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>照片墙</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/inTeam.css">
 		<link rel="stylesheet" type="text/css" href="css/cell.css">
-		<link rel="stylesheet" type="text/css" href="css/common.css">
-		<script type="text/javascript">function msg() {
-	alert('暂未开放此功能！');
-}
-
-function log() {
-	alert('请先登录！');
-}</script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/inTeam.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -115,18 +110,16 @@ function log() {
 				<div class="list">
 					<ul>
 						<li>
-							<a href="inTeam.php">
-								<?php echo date('Y') - 2; ?>级
+							<a href="inTeam.php"> <?php echo date('Y') - 3; ?>级
 							</a>
 						</li>
 						<li class="bg">
-							<a href="inTeamSecond.php">
-								<?php echo date('Y') - 1; ?>级
+							<a href="inTeamSecond.php" class="active"><?php echo date('Y') - 2; ?>级
 							</a>
 						</li>
 						<li>
 							<a href="inTeamThird.php">
-								<?php echo date('Y'); ?>级
+								<?php echo date('Y')-1; ?>级
 							</a>
 						</li>
 					</ul>
@@ -144,62 +137,29 @@ function log() {
 														<br>
 														<table  width="95%" border="0" cellpadding="4" cellspacing="1" bgcolor="#cfcece" align="center">
 															<tr>
-																<td height="26" align="center" colspan="5" class="ac"><?php echo date("Y") - 1; ?>级
+																<td height="26" align="center" colspan="5" class="ac"><?php echo date("Y") - 2; ?>级
 																	在队人员列表</td>
 															</tr>
 															<tr align="center" bgcolor="#f3f2f2">
 																<td width="10%">姓名</td>
 																
-																<td width="12%">性别</td>
+																<td width="12%">查看照片</td>
 															</tr>
-															<tr bgcolor="#FFFFFF" align="center" class="az">
-																<td>
-																	<a href="#" onclick=""></a>明明</td>
+															<tbody id="list">
 																
-																<td class="ad">男</td>
-																
-															</tr>
+															</tbody>
+															
 
 														</table></td>
 												</tr>
 											</table>
 											<table  width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
-												<tr>
-													<td height="6">
-														<img src="images/message/spacer.gif" width="1" height="1" />
-													</td>
+												
+												<tr id="pageBar">
+													
 												</tr>
-												<tr>
-													<td height="33">
-														<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-															<tr>
-																<td width="50%" class="dd">共
-																	<a href="#">
-																		5
-																	</a> 页 | 第
-																	<a href="#">
-																		1
-																	</a> 页</td>
-																<td width="49%" align="right" class="ee">[
-																	<a href="#">
-																		首页
-																	</a> |
-																	<a href="#">
-																		上一页
-																	</a> |
-																	<a href="#">
-																		下一页
-																	</a> |
-																	<a href="#">
-																		末页
-																	</a>]</td>
-
-																<td></td>
-																<td></td>
-															</tr>
-														</table></td>
-												</tr>
-											</table></td>
+											</table>
+											</td>
 									</tr>
 								</table></td>
 						</tr>
