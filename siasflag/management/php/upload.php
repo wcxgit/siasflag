@@ -65,8 +65,7 @@ function uploadFile($fileInfo, $path = './uploads', $flag = true, $maxSize = 104
 			mkdir($path, 0777, true);
 			chmod($path, 0777);
 		}
-		/*$uniName=getUniName();*/
-		//是上传到文件夹的文件名称不乱码
+		//使上传到文件夹的文件名称不乱码
 		$fileInfo['name'] = iconv('utf-8', 'gb2312', $fileInfo['name']);
 		$destination = $path . '/' . $fileInfo['name'];
 		if (!move_uploaded_file($fileInfo['tmp_name'], $destination)) {

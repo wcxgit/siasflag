@@ -8,6 +8,7 @@
 		<title>申请须知</title>
 		<link rel="stylesheet" type="text/css" href="css/come.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="shortcut icon" href="images/title_icon.ico" />
 		<script src="js/jquery.1.7.2.min.js"></script>
 		<script type="text/javascript">
 		function msg() {
@@ -135,9 +136,10 @@
 		</div>
 		<div id="footer">
 			<div class="contact">
-				电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
-				<br />
-				西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+			西亚斯国旗护卫队<br />
+		技术支持：<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail: 763396567@qq.com <br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如遇问题，欢迎反馈
 			</div>
 		</div>
 	</body>

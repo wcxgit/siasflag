@@ -69,10 +69,6 @@ error_reporting(0);?>
 						<td height="50"></td>
 					</tr>
 					<form action="../php/addTeam.php" method="post" enctype="multipart/form-data">
-						<!-- <tr>
-							<td align="right" width="20px">姓名：</td>
-							<td width="16%" class="aa"><input style="width:200px" type="text" size="40" id="name" name="username" class="input" required onblur="chkusername()" /><span class="red"> *</span></td>
-						</tr> -->
 						<tr>
 							<td align="right" width="5%">级别：<input style="width:200px" type="text" size="40" id="rank" name="rank" class="input" required="required"/><span class="red"> *</span></td>
 							<td width="16%" class="aa"></td>

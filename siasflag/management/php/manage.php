@@ -13,7 +13,7 @@ if ($id == 1) {
 	} else {
 		$sql = "select flag from user where username = '$name'";
 		$result = mysql_query($sql, $con);
-		if (mysql_result($result,1)==2) {
+		if (mysql_result($result,6)==2) {
 			echo "该用户已被封存！";
 		} else {
 			$sql = "update user set flag = 2 where username = '$name'";
@@ -35,16 +35,18 @@ if ($id == 1) {
 	} else {
 		$sql = "select flag from user where username = '$name'";
 		$result = mysql_query($sql, $con);
-		if (mysql_result($result, 1) == 0) {
-			echo "该用户没有被封存！";
-		} else {
+		while($row = mysql_fetch_array($result)){
 
-			$sql = "update user set flag = 0 where username = '$name'";
-			$result = mysql_query($sql, $con);
-			if (!$result) {
-				echo "解冻账号失败：" . mysql_errno();
+			if ($row['flag'] == 0) {
+				echo "该用户没有被封存！";
 			} else {
-				echo "解冻账号成功";
+				$sql = "update user set flag = 0 where username = '$name'";
+				$result = mysql_query($sql, $con);
+				if (!$result) {
+					echo "解冻账号失败：" . mysql_error();
+				} else {
+					echo "解冻账号成功";
+				}
 			}
 		}
 	}

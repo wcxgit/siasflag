@@ -18,7 +18,8 @@ function getDate(page,rank){
 			var li = ""; //用于存储查询出的数据
 			
 			$.each(list, function(index,array) {
-				li += '<div class="cell_1"><a href="'+array["photo"]+'"><img src="'+array["photo"]+'" width="200" ></a><p><span>姓名:</span>'+array["name"]+'</p></div>';
+				li += '<div class="cell_1"><a href="'+array["photo"]+'"><img src="'+array["photo"]+
+				'" width="200" ></a><p><span>姓名:</span>'+array["name"]+'</p></div>';
 			});
 			$('.yq').append(li);
 		},
@@ -41,19 +42,21 @@ function getPageBar() {
 	if(curPage < 1) {
 		curPage = 1;
 	}
-
-	pageStr = "<li><span>共" + total + "条</span></li><li><span>第" + curPage + "页/共" + totalPage + "页</span></li>";
+	pageStr = "<li><span>共" + total + "条</span></li><li><span>第" + curPage + "页/共" + totalPage +
+	 "页</span></li>";
 	//当前页是第一页
 	if(curPage == 1) {
 		pageStr += "<li><span>首页</span></li><li><span>上一页</span></li>";
 	} else {
-		pageStr += "<li><a href='javascript:;'  class='page' onclick='jump(1);'>首页</a></li><li><a href='javascript:;'  class='page' onclick='jump(curPage-1);'>上一页</a></li>";
+		pageStr += "<li><a href='javascript:;'  class='page' onclick='jump(1);'>首页</a></li><li>"+
+		"<a href='javascript:;'  class='page' onclick='jump(curPage-1);'>上一页</a></li>";
 	}
 	//当前页是尾页
 	if(curPage == totalPage) {
 		pageStr += "<li><span>下一页</span></li><li><span>尾页</span></li>";
 	} else {
-		pageStr += "<li><a href='javascript:;'  class='page' onclick='jump(parseInt(curPage)+1);'>下一页</a></li><li><a href='javascript:;'  class='page' onclick='jump(totalPage);'>尾页</a></li>";
+		pageStr += "<li><a href='javascript:;'  class='page' onclick='jump(parseInt(curPage)+1);'>"+
+	"下一页</a></li><li><a href='javascript:;'  class='page' onclick='jump(totalPage);'>尾页</a></li>";
 	}
 	$('#page ul').html(pageStr);
 }

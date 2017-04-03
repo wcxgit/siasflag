@@ -24,7 +24,7 @@ error_reporting(0);?>
 			'of': off
 		},
 		success: function(data) {
-			console.log(data);
+			alert(data);
 		},
 		error: function(jqXHR) {
 			console.log(jqXHR.status);

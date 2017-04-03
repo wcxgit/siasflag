@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/reply.css">
 		<link rel="stylesheet" type="text/css" href="css/cell.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="shortcut icon" href="images/title_icon.ico" />
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script src="js/reply.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -142,54 +143,16 @@
 															<tbody id="list">
 																
 															</tbody>
-															<!--<tr bgcolor="#FFFFFF" align="center" class="az">
-																<td>
-																	<a href="#" onclick=""></a>明明</td>
-																<td>xxxx</td>
-																<td class="ad">2016-12-01</td>
-																<td class="ad">
-																	<a href="Reply content.html">
-																		查看详情
-																	</a></td>
-															</tr>
--->
+														
 														</table></td>
 												</tr>
 											</table>
 											<table  width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
-												<tr>
-													<td height="6">
-														<img src="images/message/spacer.gif" width="1" height="1" />
-													</td>
-												</tr>
+												
 												<tr>
 													<td height="33">
 														<table id="pageBar" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-															<!--<tr>
-																<td width="50%" class="dd">共
-																	<a href="#">
-																		5
-																	</a> 页 | 第
-																	<a href="#">
-																		1
-																	</a> 页</td>
-																<td width="49%" align="right" class="ee">[
-																	<a href="#">
-																		首页
-																	</a> |
-																	<a href="#">
-																		上一页
-																	</a> |
-																	<a href="#">
-																		下一页
-																	</a> |
-																	<a href="#">
-																		末页
-																	</a>]</td>
-
-																<td></td>
-																<td></td>
-															</tr>-->
+															
 														</table></td>
 												</tr>
 											</table></td>
@@ -203,9 +166,10 @@
 		</div>
 		<div id="footer">
 			<div class="contact">
-				电话：010-12348888　传真：010-88666666　客服电话：400-0809-560
-				<br />
-				西亚斯国旗护卫队网站（新郑市）xxxx 版权所有 豫ICP备11112222号
+				西亚斯国旗护卫队<br />
+		技术支持：<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail: 763396567@qq.com <br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如遇问题，欢迎反馈
 			</div>
 		</div>
 	</body>

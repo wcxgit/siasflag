@@ -33,6 +33,7 @@ $('#user').focus();
 					type:"POST",
 					url:"php/register.php",
 					data:{
+						'id':2,
 						"username":username
 					},
 					success:function(data){
@@ -67,7 +68,6 @@ $('#user').focus();
 				}
 				$('#err_pwd').html("");
 				return true;
-
 			}
 
 			//验证电话是否合法
@@ -77,6 +77,7 @@ $('#user').focus();
 					type:"POST",
 					url:"php/register.php",
 					data:{
+						'id':1,
 						"tel":tel
 					},
 					success:function(data){
@@ -164,6 +165,7 @@ $('#user').focus();
 						url: "php/register.php",
 						type: "POST",
 						data: {
+							'id':3,
 							"username": user,
 							"tel": tel,
 						/*	"mail": mail,*/
@@ -176,7 +178,7 @@ $('#user').focus();
 						},
 						complete:function(){
 							alert('注册成功,点击确定跳转到主页！');
-							window.location.href="../management/html/index.php";
+							window.location.href="../../index.php";
 
 						}
 					});

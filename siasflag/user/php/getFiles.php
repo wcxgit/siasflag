@@ -13,7 +13,6 @@ if($id==1){
 	$arr['list'] = '';
 	
 	while($row = mysql_fetch_array($xiaoyuan)){
-		/*echo '<li><a href="'.$row['url'].'">'.$row['title'].'</a><span>'.$row['time'].'</span>/li>';*/
 		$arr['list'][] = array(
 			'url'=>$row['url'],
 			'title'=>$row['title'],
@@ -92,7 +91,6 @@ if($id==1){
 		exit();
 	}
 	$arr['list'] = '';
-
 	while ( $row = mysql_fetch_array($result)) {
 		$arr['list'][] = array(
 			'qq'=>$row['qq'],
@@ -100,21 +98,15 @@ if($id==1){
 			'wechat'=>$row['wechat']
 			);
 	}
-	
 	echo json_encode($arr);
 }elseif($id == 6){//获取视频内容
-
 	$page = $_GET['pageNum'];//起始页
-
 	//获取数据总数
 	$sqlTotal = "select * from media";
-
 	$total = mysql_num_rows(mysql_query($sqlTotal));
-
 	$pageSize = 15;//每页显示条数
 	$pageStart = ($page-1)*$pageSize;//页起始位置
 	$totalPage = ceil($total/$pageSize);//总页数
-
 	//封装数据
 	$arr['total'] = $total;
 	$arr['pageSize'] = $pageSize;

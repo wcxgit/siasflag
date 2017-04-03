@@ -24,6 +24,7 @@ if ($of == 'off') {
 		echo '设置失败：'.mysql_error();
 		exit();
 	}
+	echo "关闭成功！";
 	$_SESSION['on-off'] = false;
 } else {
 	//点击开启单选按钮
@@ -33,6 +34,7 @@ if ($of == 'off') {
 		echo '设置失败：'.mysql_error();
 		exit();
 	}
+	echo "开启成功！";
 	$_SESSION['on-off'] = true;
 }
 ?>
