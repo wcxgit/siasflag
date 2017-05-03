@@ -41,7 +41,7 @@ if($id==1){
 	$page = $_GET['pageNum'];//起始页
 
 	//获取数据总数
-	$sqlTotal = "select * from file";
+	$sqlTotal = "select * from file where flag!=3";
 
 	$total = mysql_num_rows(mysql_query($sqlTotal));
 
@@ -54,7 +54,7 @@ if($id==1){
 	$arr['pageSize'] = $pageSize;
 	$arr['totalPage'] = $totalPage;
 	//查询分页
-	$sql = "select * from file order by time desc limit {$pageStart},{$pageSize}";
+	$sql = "select * from file where flag!=3 order by time desc limit {$pageStart},{$pageSize}";
 	$result = mysql_query($sql);
 	if(!$result){
 		echo '查询失败：'.mysql_error();

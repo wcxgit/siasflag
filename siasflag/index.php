@@ -1,10 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start(); 
 error_reporting(0);?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="keywords" content="西亚斯,sias,siasflag,西亚斯国旗护卫队,国旗护卫队,郑州大学西亚斯国际学院国旗护卫队官网,国旗护卫队官网">
+	<meta http-equiv="description" content="郑州大学西亚斯国际学院国旗护卫队官网">
+	<meta name="baidu-site-verification" content="u3SRYvrtCV" />
 	<link rel="stylesheet" type="text/css" href="user/css/index.css">
 	<link rel="stylesheet" type="text/css" href="user/css/common.css">
 	<link rel="shortcut icon" href="user/images/title_icon.ico" />
@@ -17,6 +20,7 @@ error_reporting(0);?>
 </head>
 
 <body>
+<?php include_once("baidu_js_push.php") ?>
 	<a name="top"></a>
 	<div id="header">
 		<h1>
@@ -183,7 +187,7 @@ if(!$_SESSION[user]){
 </div>
 <div id="footer">
 	<div class="contact">
-	西亚斯国旗护卫队<br />
+	郑州大学西亚斯国际学院国旗护卫队<br />
 		技术支持：<br />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail: 763396567@qq.com <br />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如遇问题，欢迎反馈

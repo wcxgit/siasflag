@@ -23,7 +23,10 @@ $.ajax({
 		var li = '';
 		$.each(list, function(index, array) {
 			if(array['url'] == '../user/file detail.php') {
+				/*li += "<li><a href='javascript: ;' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'><img src='user/images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>" + array['title'] + "</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>" + array['time'] + "</span></span></a></li>";*/
+
 				li += "<li><a href='javascript:;' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'>" + array['title'] + "</a><span>" + array['time'] + "</span></li>";
+
 			} else {
 				li += "<li><a href='" + array['url'] + "' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'>" + array['title'] + "</a><span>" + array['time'] + "</span></li>";
 			}
@@ -39,6 +42,7 @@ $.ajax({
 	method: 'get',
 	url: 'user/php/getFiles.php?id=2&r=' + Math.random(),
 	success: function(data) {
+
 		var json = JSON.parse(data);
 		var list = json.list;
 		li = '';

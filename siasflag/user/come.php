@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();
 	error_reporting(0);
 ?>
@@ -8,7 +8,6 @@
 		<title>申请须知</title>
 		<link rel="stylesheet" type="text/css" href="css/come.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
-		<link rel="shortcut icon" href="images/title_icon.ico" />
 		<script src="js/jquery.1.7.2.min.js"></script>
 		<script type="text/javascript">
 		function msg() {
@@ -35,6 +34,7 @@
 	</head>
 
 	<body>
+<?php include_once("baidu_js_push.php") ?>
 		<a name="top"></a>
 		<div id="header">
 			<h1>
@@ -130,7 +130,6 @@
 			<div class="right">
 				<pre>加入要求：</pre>
 				<div class="yq">
-
 				</div>
 			</div>
 		</div>

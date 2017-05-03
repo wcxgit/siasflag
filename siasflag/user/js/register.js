@@ -68,6 +68,7 @@ $('#user').focus();
 				}
 				$('#err_pwd').html("");
 				return true;
+
 			}
 
 			//验证电话是否合法

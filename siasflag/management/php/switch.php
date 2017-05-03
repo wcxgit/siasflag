@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*开关设置*/
 include 'conn.php';
 session_start();
@@ -24,8 +24,8 @@ if ($of == 'off') {
 		echo '设置失败：'.mysql_error();
 		exit();
 	}
-	echo "关闭成功！";
 	$_SESSION['on-off'] = false;
+	echo "成功关闭加入我们功能！";
 } else {
 	//点击开启单选按钮
 	$sql = 'update switch set flag = 1';
@@ -34,7 +34,7 @@ if ($of == 'off') {
 		echo '设置失败：'.mysql_error();
 		exit();
 	}
-	echo "开启成功！";
 	$_SESSION['on-off'] = true;
+	echo "成功开启加入我们功能!";
 }
 ?>

@@ -13,7 +13,7 @@ $url = 'user/file detail.php';
 //获取选择框的数据
 $sel = $_POST['sel'];
 $time = date('Y-m-d');
-$path = '../files';
+$path = '../management/files';
 $flag = false;
 $maxSize = 209715200;
 $allowExt = array('txt', 'doc', 'docx', 'ppt', 'xlsx');

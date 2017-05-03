@@ -13,7 +13,8 @@ if ($id == 1) {
 	} else {
 		$sql = "select flag from user where username = '$name'";
 		$result = mysql_query($sql, $con);
-		if (mysql_result($result,6)==2) {
+		while($row = mysql_fetch_array($result)){
+		if ($row['flag']==2) {
 			echo "该用户已被封存！";
 		} else {
 			$sql = "update user set flag = 2 where username = '$name'";
@@ -26,6 +27,7 @@ if ($id == 1) {
 		}
 
 	}
+}
 
 } elseif ($id == 2) {
 	$sql = "select * from user where username = '$name'";

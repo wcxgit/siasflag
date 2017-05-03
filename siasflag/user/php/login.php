@@ -31,15 +31,21 @@ session_start();
 			$_SESSION['sid'] = $sid;
 			echo "用户登录";
 		}elseif($name == 'super'  && $pwd == 'super'){
+			/*$_SESSION['admin'] = false;*/
 			$_SESSION["super"] = true;
 			$_SESSION['super'] = '超级管理员';
 			$_SESSION['sid'] = $sid;
 			echo "超级管理员";
 			exit();
 		}elseif($flag == 1){
+			/*$_SESSION["super"] = false;*/
 			$_SESSION['admin'] = true;
 			$_SESSION['admin'] = $name;
 			$_SESSION['sid'] = $sid;
 			echo "管理员登录";
 		}
+		/*$_SESSION["Passed"] = true;*/
+		/*$_SESSION['user'] = $name;*/
+		/*$_SESSION['admin'] = $name;*/
+		/*}*/
 		?>

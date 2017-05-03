@@ -32,7 +32,7 @@ function submit(){
 	var context = $('#context').val();
 	$.ajax({
 		type:'POST',
-		url:'../php/application.php',
+		url:'php/application.php',
 		data:{
 			"id":3,
 			"name":name,

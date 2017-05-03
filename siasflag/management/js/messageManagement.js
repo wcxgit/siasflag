@@ -60,12 +60,12 @@ var	totalPage,curPage;
 					}
 					//当前页为尾页
 					if(curPage == totalPage){
-						pageBar+='| <span>下一页</span> | <span>末页</span>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
+						pageBar+='| <span>下一页</span> | <span>末页</span>] '
 					}else{
-						pageBar+='| <a href="javascript:;" onclick="jump('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jump('+totalPage+')">末页</a>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
+						pageBar+='| <a href="javascript:;" onclick="jump('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jump('+totalPage+')">末页</a>] '
 					}
 					
-					pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc" onclick="turnPage()"/></td></tr></table></td><td></td><td></td></tr>';
+					//pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc" onclick="turnPage()"/></td></tr></table></td><td></td><td></td></tr>';
 
 					$('#pageBar').html(pageBar);
 				}
@@ -161,7 +161,7 @@ var	totalPage,curPage;
 					if(curPage == totalPage){
 						pageBar+='| <span>下一页</span> | <span>末页</span>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
 					}else{
-						pageBar+='| <a href="javascript:;" onclick="jumpS('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jumpS('+totalPage+')">末页</a>] 转至：</td><td width="1%"><table width="20" border="1" cellspacing="0" cellpadding="0">'
+						pageBar+='| <a href="javascript:;" onclick="jumpS('+(parseInt(curPage)+1)+')">下一页</a> | <a href="javascript:;" onclick="jumpS('+totalPage+')">末页</a>]'
 					}
 					
 					/*pageBar+='<tr><td width="1%"><input name="page" type="text" size="1" /></td><td width="87%"><input name="Submit" type="button" value=" " class="cc"  onclick="turnPageS()"/></td></tr></table></td><td></td><td></td></tr>';*/

@@ -18,19 +18,19 @@ if ($sex == 1) {
 $id = $_POST['id'];
 
 if ($id == 1) {
-	$sqlTel = "select * from user where tel = '{$tel}'";
+	$sqlTel = "select tel from user where tel = '{$tel}'";
 	$resultTel = mysql_query($sqlTel);
 	if (!$resultTel) {
-		echo "电话失败！" . mysql_error();
+		echo "电话失败！";
 	} elseif (mysql_num_rows($resultTel) > 0) {
 		echo '电话号码已被注册!';
 		exit();
 	}
 } elseif ($id == 2) {
-	$sqlName = "select * from user where username = '{$name}'";
+	$sqlName = "select username from user where username = '{$name}'";
 	$resultName = mysql_query($sqlName);
 	if (!$resultName) {
-		echo "用户名失败！" . mysql_error();
+		echo "用户名失败！";
 	}
 	if (mysql_num_rows($resultName) > 0) {
 		echo '用户名已被注册!';

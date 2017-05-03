@@ -22,6 +22,8 @@ function getDate(page) {
 					li += "<li><a href='" + array['url'] + "' onclick='getTitleTime(\"" + array['title'] + "\",\"" + array['time'] + "\");'><img src='images/file_01.png'><p>&nbsp;&nbsp;标题：<span class='title'>" + array['title'] + "</span>&nbsp;&nbsp;&nbsp;</p><span >日期：<span class='time'>" + array['time'] + "</span></span></a></li>";
 				}
 			});
+			/*			onclick="getTitleTime('"+array['title']+"');"
+			 */
 			$('#files').append(li);
 		},
 		complete: function() { //数据加载完成后生成分页条

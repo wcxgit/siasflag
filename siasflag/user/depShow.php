@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();
 error_reporting(0);?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,12 +7,12 @@ error_reporting(0);?>
 	<title>荣誉展示</title>
 	<link rel="stylesheet" type="text/css" href="css/file.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<link rel="shortcut icon" href="images/title_icon.ico" />
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/depShow.js"></script>
 </head>
 
 <body>
+<?php include_once("baidu_js_push.php") ?>
 	<a name="top"></a>
 	<div id="header">
 		<h1><a href="index.html"><img src="images/logo.png"></a></h1>

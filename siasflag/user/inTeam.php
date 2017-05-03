@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php session_start();
 	error_reporting(0);
 ?>
@@ -9,12 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/inTeam.css">
 		<link rel="stylesheet" type="text/css" href="css/cell.css">
-		<link rel="shortcut icon" href="images/title_icon.ico" />
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>	
 		<script src="js/inTeam.js" type="text/javascript" charset="utf-8"></script>	
 	</head>
 
 	<body>
+<?php include_once("baidu_js_push.php") ?>
 		<a name="top"></a>
 		<div id="header">
 			<h1>
@@ -101,7 +101,7 @@
 					</p>
 					<p>
 						<a href="picture.php">
-							照片墙 >>
+							照片展示 >>
 						</a>
 					</p>
 				</div>

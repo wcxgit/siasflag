@@ -223,9 +223,9 @@ function list(idstr) {
 										</tr>
 										<!-- <tr>
 
-											<td width="9%" height="20"><img id="xiaotu50" src="../img/ico06.gif" width="8" height="12" /></td>
+											<td width="9%" height="20"><img id="xiaotu20" src="../img/ico06.gif" width="8" height="12" /></td>
 
-											<td width="91%"><a href="alert.php" target="mainFrame" class="left3" onClick="tupian('20');">加入要求</a></td>
+											<td width="91%"><a href="javascript:;" target="mainFrame" class="left3" onClick="tupian('20');">加入要求</a></td>
 
 										</tr> -->
 
