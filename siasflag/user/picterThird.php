@@ -94,16 +94,17 @@
 			<div class="left">
 				<img src="images/message/message_3.png">
 				<div class="line">
+				<p>
+						<a href="picture.php">
+							照片墙 >>
+						</a>
+					</p>
 					<p>
 						<a href="inTeam.php">
 							在队人员 >>
 						</a>
 					</p>
-					<p>
-						<a href="picture.php">
-							照片墙 >>
-						</a>
-					</p>
+					
 				</div>
 			</div>
 			<div class="centre"></div>
